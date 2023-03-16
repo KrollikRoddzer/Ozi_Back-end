@@ -5,9 +5,9 @@ public class Message
 {
     private Integer id;
 
-    private Integer sentId;
+    private User sentUser;
 
-    private Integer receiveId;
+    private User receiveUser;
 
     private Date messageDate;
 
@@ -20,15 +20,15 @@ public class Message
 
     public Message(
             Integer id,
-            Integer sentId,
-            Integer receiveId,
+            User sentUser,
+            User receiveUser,
             Date messageDate,
             String text
     )
     {
         this.id = id;
-        this.sentId = sentId;
-        this.receiveId = receiveId;
+        this.sentUser = sentUser;
+        this.receiveUser = receiveUser;
         this.messageDate = messageDate;
         this.text = text;
     }
@@ -37,12 +37,12 @@ public class Message
         return id;
     }
 
-    public Integer getSentId() {
-        return sentId;
+    public User getSentUser() {
+        return sentUser;
     }
 
-    public Integer getReceiveId() {
-        return receiveId;
+    public User getReceiveUser() {
+        return receiveUser;
     }
 
     public Date getMessageDate() {

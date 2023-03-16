@@ -5,7 +5,7 @@ import java.util.Collection;
 
 public class UserDialogs
 {
-    private Collection<Dialog> dialogs;
+    private final Collection<Dialog> dialogs;
 
     public UserDialogs()
     {

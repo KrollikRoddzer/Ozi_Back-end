@@ -5,7 +5,7 @@ import java.util.Collection;
 
 public class Dialog
 {
-    private Collection<Message> messages;
+    private final Collection<Message> messages;
 
     public Dialog()
     {

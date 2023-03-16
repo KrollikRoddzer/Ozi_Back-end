@@ -4,26 +4,26 @@ import java.util.Collection;
 
 public class UserFriendsRequest
 {
-    private Integer userId;
+    private User user;
 
-    private Collection<Integer> requestsId;
+    private Collection<User> requests;
 
     public UserFriendsRequest()
     {
 
     }
 
-    public UserFriendsRequest(Integer userId, Collection<Integer> requestsId)
+    public UserFriendsRequest(User user, Collection<User> requests)
     {
-        this.userId = userId;
-        this.requestsId = requestsId;
+        this.user = user;
+        this.requests = requests;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public User getUserId() {
+        return user;
     }
 
-    public Collection<Integer> getRequestsId() {
-        return requestsId;
+    public Collection<User> getRequestsId() {
+        return requests;
     }
 }
