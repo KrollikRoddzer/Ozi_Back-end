@@ -1,7 +1,8 @@
 package by.fpmibsu.ozi.entity;
 
+import java.io.Serializable;
 import java.util.Date;
-public class Message
+public class Message implements Serializable, Cloneable
 {
     private Integer id;
 

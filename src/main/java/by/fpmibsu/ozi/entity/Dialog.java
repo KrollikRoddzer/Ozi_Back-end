@@ -1,9 +1,10 @@
 package by.fpmibsu.ozi.entity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Dialog
+public class Dialog implements Serializable, Cloneable
 {
     private final Collection<Message> messages;
 

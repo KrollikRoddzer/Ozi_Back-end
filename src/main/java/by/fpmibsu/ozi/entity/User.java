@@ -3,12 +3,13 @@ package by.fpmibsu.ozi.entity;
 import org.bouncycastle.util.encoders.Hex;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 
-public class User
+public class User implements Serializable, Cloneable
 {
     private Integer id;
 

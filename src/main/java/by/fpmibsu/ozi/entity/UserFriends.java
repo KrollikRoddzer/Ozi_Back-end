@@ -1,8 +1,9 @@
 package by.fpmibsu.ozi.entity;
 
+import java.io.Serializable;
 import java.util.Collection;
 
-public class UserFriends
+public class UserFriends implements Serializable, Cloneable
 {
     private User user;
 

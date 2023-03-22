@@ -1,8 +1,9 @@
 package by.fpmibsu.ozi.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Post
+public class Post implements Serializable, Cloneable
 {
     private Integer id;
 

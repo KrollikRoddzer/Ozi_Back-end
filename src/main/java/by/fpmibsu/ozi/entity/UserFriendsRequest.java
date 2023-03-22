@@ -1,8 +1,9 @@
 package by.fpmibsu.ozi.entity;
 
+import java.io.Serializable;
 import java.util.Collection;
 
-public class UserFriendsRequest
+public class UserFriendsRequest implements Serializable, Cloneable
 {
     private User user;
 
@@ -19,11 +20,11 @@ public class UserFriendsRequest
         this.requests = requests;
     }
 
-    public User getUserId() {
+    public User getUser() {
         return user;
     }
 
-    public Collection<User> getRequestsId() {
+    public Collection<User> getRequests() {
         return requests;
     }
 }
