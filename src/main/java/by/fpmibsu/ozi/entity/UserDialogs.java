@@ -3,22 +3,23 @@ package by.fpmibsu.ozi.entity;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class UserDialogs implements Serializable, Cloneable
 {
-    private final Collection<Dialog> dialogs;
+    private final List<Dialog> dialogs;
 
     public UserDialogs()
     {
         dialogs = new ArrayList<>();
     }
 
-    public UserDialogs(Collection<Dialog> dialogs)
+    public UserDialogs(List<Dialog> dialogs)
     {
         this.dialogs = dialogs;
     }
 
-    public Collection<Dialog> getDialogs() {
+    public List<Dialog> getDialogs() {
         return dialogs;
     }
 }

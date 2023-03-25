@@ -2,19 +2,20 @@ package by.fpmibsu.ozi.entity;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.List;
 
 public class UserFriends implements Serializable, Cloneable
 {
     private User user;
 
-    private Collection<User> friends;
+    private List<User> friends;
 
     public UserFriends()
     {
 
     }
 
-    public UserFriends(User user, Collection<User> friends)
+    public UserFriends(User user, List<User> friends)
     {
         this.user = user;
         this.friends = friends;
@@ -24,7 +25,7 @@ public class UserFriends implements Serializable, Cloneable
         return this.user;
     }
 
-    public Collection<User> getFriendsId() {
+    public List<User> getFriendsId() {
         return this.friends;
     }
 }

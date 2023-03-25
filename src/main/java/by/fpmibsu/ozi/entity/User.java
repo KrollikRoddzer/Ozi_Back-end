@@ -3,6 +3,8 @@ package by.fpmibsu.ozi.entity;
 import org.bouncycastle.util.encoders.Hex;
 import org.jetbrains.annotations.NotNull;
 
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -32,6 +34,9 @@ public class User implements Serializable, Cloneable
     private String city;
 
     private String about;
+
+    private Image image;
+
     public User()
     {
 
@@ -45,10 +50,7 @@ public class User implements Serializable, Cloneable
             String name,
             String surname,
             Date birthday,
-            String sex,
-            String country,
-            String city,
-            String about
+            String sex
             ) throws NoSuchAlgorithmException {
         this.id = id;
         this.phone = phone;
@@ -58,36 +60,11 @@ public class User implements Serializable, Cloneable
         this.surname = surname;
         this.birthday = birthday;
         this.sex = sex;
-        this.country = country;
-        this.city = city;
-        this.about = about;
-    }
-
-    public User(
-            Integer id,
-            String phone,
-            String email,
-            String password,
-            String name,
-            String surname,
-            Date birthday,
-            String sex,
-            String country,
-            String city
-    ) throws NoSuchAlgorithmException {
-        this.id = id;
-        this.phone = phone;
-        this.email = email;
-        this.password = User.makeHash(password);
-        this.name = name;
-        this.surname = surname;
-        this.birthday = birthday;
-        this.sex = sex;
-        this.country = country;
-        this.city = city;
+        this.country = "";
+        this.city = "";
         this.about = "";
+        this.image = null;
     }
-
 
     public Integer getId() {
         return id;
@@ -178,5 +155,13 @@ public class User implements Serializable, Cloneable
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
         byte[] hash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
         return new String(Hex.encode(hash));
+    }
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
     }
 }
