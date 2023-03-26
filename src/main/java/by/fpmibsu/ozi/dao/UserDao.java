@@ -3,6 +3,7 @@ package by.fpmibsu.ozi.dao;
 import by.fpmibsu.ozi.db.ConnectionCreator;
 import by.fpmibsu.ozi.entity.User;
 
+import java.security.NoSuchAlgorithmException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,10 +17,10 @@ public class UserDao implements Dao<User>
     public static final String SQL_SELECT_ALL_USERS = "SELECT * FROM user;";
     public static final String SQL_SELECT_BY_PHONE = "SELECT * FROM user WHERE phone = ?;";
     public static final String SQL_SELECT_BY_EMAIL = "SELECT * FROM user WHERE email = ?;";
-    public static final String SQL_DELETE_BY_USER = "DELETE FROM user where id = ?";
-    public static final String SQL_CREATE_USER = "INSERT INTO user(phone, email, password, name, surname, birthday, sex) " +
-            "values(?, ?, ?, ? ,?, ?, ?);";
-    public static final String SQL_UPDATE_USER = "UPDATE user SET password = ?, name = ?, surname = ?, birthday = ?, sex = ?, " +
+    public static final String SQL_DELETE_BY_USER = "DELETE FROM user WHERE id = ?";
+    public static final String SQL_CREATE_USER = "INSERT INTO user(phone, email, password, name, surname, birthday, sex, country, city, about, photo) " +
+            "values(?, ?, ?, ? ,?, ?, ?, ?, ?, ?, ?);";
+    public static final String SQL_UPDATE_USER = "UPDATE user WHERE id = ? SET password = ?, name = ?, surname = ?, birthday = ?, sex = ?, " +
             "country = ?, city = ?, about = ?, photo = ?";
     @Override
     public List<User> findAll() throws DaoException {
@@ -55,12 +56,40 @@ public class UserDao implements Dao<User>
 
     @Override
     public boolean delete(User user) throws DaoException {
-        return false;
+        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_DELETE_BY_USER))
+        {
+            statement.setInt(1, user.getId());
+            int count = statement.executeUpdate();
+            return count > 0;
+        }
+        catch (SQLException e)
+        {
+            throw new DaoException(e.getMessage(), e.getCause());
+        }
     }
 
     @Override
     public boolean create(User user) throws DaoException {
-        return false;
+        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_CREATE_USER))
+        {
+            statement.setString(1, user.getPhone());
+            statement.setString(2, user.getEmail());
+            statement.setString(3, User.makeHash(user.getPassword()));
+            statement.setString(4, user.getName());
+            statement.setString(5, user.getSurname());
+            statement.setDate(6, user.getBirthday());
+            statement.setString(7, user.getSex());
+            statement.setString(8, user.getCountry());
+            statement.setString(9, user.getCity());
+            statement.setString(10, user.getAbout());
+            statement.setBlob(11, user.getImage());
+
+            return statement.executeUpdate() > 0;
+        }
+        catch (SQLException | NoSuchAlgorithmException e)
+        {
+            throw new DaoException(e.getMessage(), e.getCause());
+        }
     }
 
     @Override

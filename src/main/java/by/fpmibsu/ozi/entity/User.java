@@ -3,8 +3,6 @@ package by.fpmibsu.ozi.entity;
 import org.bouncycastle.util.encoders.Hex;
 import org.jetbrains.annotations.NotNull;
 
-import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -73,6 +71,31 @@ public class User implements Serializable, Cloneable
             String password,
             String name,
             String surname,
+            String birthday,
+            String sex
+    ) {
+        this.id = id;
+        this.phone = phone;
+        this.email = email;
+        this.password = password;
+        this.name = name;
+        this.surname = surname;
+        long d = java.util.Date.parse(birthday);
+        this.birthday = new Date(d);
+        this.sex = sex;
+        this.country = null;
+        this.city = null;
+        this.about = null;
+        this.image = null;
+    }
+
+    public User(
+            Integer id,
+            String phone,
+            String email,
+            String password,
+            String name,
+            String surname,
             Date birthday,
             String sex,
             String country,
@@ -87,6 +110,35 @@ public class User implements Serializable, Cloneable
         this.name = name;
         this.surname = surname;
         this.birthday = birthday;
+        this.sex = sex;
+        this.country = country;
+        this.city = city;
+        this.about = about;
+        this.image = image;
+    }
+
+    public User(
+            Integer id,
+            String phone,
+            String email,
+            String password,
+            String name,
+            String surname,
+            String birthday,
+            String sex,
+            String country,
+            String city,
+            String about,
+            java.sql.Blob image
+    ) {
+        this.id = id;
+        this.phone = phone;
+        this.email = email;
+        this.password = password;
+        this.name = name;
+        this.surname = surname;
+        long d = java.util.Date.parse(birthday);
+        this.birthday = new Date(d);
         this.sex = sex;
         this.country = country;
         this.city = city;
