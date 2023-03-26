@@ -29,6 +29,13 @@ public class OziApplication {
 //			User user = new User(-1, phone, email, password, name, surname, birthday, sex);
 //			System.out.println(userDao.create(user));
 
+			User found = userDao.findByPhone("+375445918769");
+			if (found != null)
+			{
+				found.setName("Stanislav");
+				userDao.update(found);
+			}
+
 			for (var item : userDao.findAll()) {
 				System.out.println(item);
 			}

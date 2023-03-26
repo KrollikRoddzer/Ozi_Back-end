@@ -20,8 +20,8 @@ public class UserDao implements Dao<User>
     public static final String SQL_DELETE_BY_USER = "DELETE FROM user WHERE id = ?";
     public static final String SQL_CREATE_USER = "INSERT INTO user(phone, email, password, name, surname, birthday, sex, country, city, about, photo) " +
             "values(?, ?, ?, ? ,?, ?, ?, ?, ?, ?, ?);";
-    public static final String SQL_UPDATE_USER = "UPDATE user WHERE id = ? SET password = ?, name = ?, surname = ?, birthday = ?, sex = ?, " +
-            "country = ?, city = ?, about = ?, photo = ?";
+    public static final String SQL_UPDATE_USER = "UPDATE user SET phone = ?, email = ?, password = ?, name = ?, surname = ?, birthday = ?, sex = ?, " +
+            "country = ?, city = ?, about = ?, photo = ? WHERE id = ?";
     @Override
     public List<User> findAll() throws DaoException {
         try(PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_ALL_USERS))
@@ -54,6 +54,73 @@ public class UserDao implements Dao<User>
         }
     }
 
+    public User findByPhone(String phone) throws DaoException
+    {
+        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_BY_PHONE))
+        {
+            statement.setString(1, phone);
+            ResultSet set = statement.executeQuery();
+            if (set.next())
+            {
+                return new User(
+                        set.getInt("id"),
+                        set.getString("phone"),
+                        set.getString("email"),
+                        set.getString("password"),
+                        set.getString("name"),
+                        set.getString("surname"),
+                        set.getDate("birthday"),
+                        set.getString("sex"),
+                        set.getString("country"),
+                        set.getString("city"),
+                        set.getString("about"),
+                        set.getBlob("photo")
+                );
+            }
+            else
+            {
+                return null;
+            }
+        }
+        catch (SQLException e)
+        {
+            throw new DaoException(e.getMessage(), e.getCause());
+        }
+    }
+
+    public User findByEmail(String email) throws DaoException
+    {
+        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_BY_EMAIL))
+        {
+            statement.setString(1, email);
+            ResultSet set = statement.executeQuery();
+            if (set.next())
+            {
+                return new User(
+                        set.getInt("id"),
+                        set.getString("phone"),
+                        set.getString("email"),
+                        set.getString("password"),
+                        set.getString("name"),
+                        set.getString("surname"),
+                        set.getDate("birthday"),
+                        set.getString("sex"),
+                        set.getString("country"),
+                        set.getString("city"),
+                        set.getString("about"),
+                        set.getBlob("photo")
+                );
+            }
+            else
+            {
+                return null;
+            }
+        }
+        catch (SQLException e)
+        {
+            throw new DaoException(e.getMessage(), e.getCause());
+        }
+    }
     @Override
     public boolean delete(User user) throws DaoException {
         try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_DELETE_BY_USER))
@@ -94,6 +161,27 @@ public class UserDao implements Dao<User>
 
     @Override
     public User update(User user) throws DaoException {
-        return null;
+        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_UPDATE_USER))
+        {
+            statement.setInt(12, user.getId());
+            statement.setString(1, user.getPhone());
+            statement.setString(2, user.getEmail());
+            statement.setString(3, user.getPassword());
+            statement.setString(4, user.getName());
+            statement.setString(5, user.getSurname());
+            statement.setDate(6, user.getBirthday());
+            statement.setString(7, user.getSex());
+            statement.setString(8, user.getCountry());
+            statement.setString(9, user.getCity());
+            statement.setString(10, user.getAbout());
+            statement.setBlob(11, user.getImage());
+
+            statement.executeUpdate();
+            return user;
+        }
+        catch (SQLException e)
+        {
+            throw new DaoException(e.getMessage(), e.getCause());
+        }
     }
 }
