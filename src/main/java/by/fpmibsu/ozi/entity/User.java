@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Date;
+import java.sql.Date;
 
 public class User implements Serializable, Cloneable
 {
@@ -35,7 +35,7 @@ public class User implements Serializable, Cloneable
 
     private String about;
 
-    private Image image;
+    private java.sql.Blob image;
 
     public User()
     {
@@ -51,19 +51,47 @@ public class User implements Serializable, Cloneable
             String surname,
             Date birthday,
             String sex
-            ) throws NoSuchAlgorithmException {
+            ) {
         this.id = id;
         this.phone = phone;
         this.email = email;
-        this.password = User.makeHash(password);
+        this.password = password;
         this.name = name;
         this.surname = surname;
         this.birthday = birthday;
         this.sex = sex;
-        this.country = "";
-        this.city = "";
-        this.about = "";
+        this.country = null;
+        this.city = null;
+        this.about = null;
         this.image = null;
+    }
+
+    public User(
+            Integer id,
+            String phone,
+            String email,
+            String password,
+            String name,
+            String surname,
+            Date birthday,
+            String sex,
+            String country,
+            String city,
+            String about,
+            java.sql.Blob image
+    ) {
+        this.id = id;
+        this.phone = phone;
+        this.email = email;
+        this.password = password;
+        this.name = name;
+        this.surname = surname;
+        this.birthday = birthday;
+        this.sex = sex;
+        this.country = country;
+        this.city = city;
+        this.about = about;
+        this.image = image;
     }
 
     public Integer getId() {
@@ -90,8 +118,8 @@ public class User implements Serializable, Cloneable
         return password;
     }
 
-    public void setPassword(String password) throws NoSuchAlgorithmException{
-        this.password = User.makeHash(password);
+    public void setPassword(String password){
+        this.password = password;
     }
 
     public String getName() {
@@ -157,11 +185,29 @@ public class User implements Serializable, Cloneable
         return new String(Hex.encode(hash));
     }
 
-    public Image getImage() {
+    public java.sql.Blob getImage() {
         return image;
     }
 
-    public void setImage(Image image) {
+    public void setImage(java.sql.Blob image) {
         this.image = image;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(id).append(' ');
+        stringBuilder.append(phone).append(' ');
+        stringBuilder.append(email).append(' ');
+        stringBuilder.append(password).append(' ');
+        stringBuilder.append(name).append(' ');
+        stringBuilder.append(surname).append(' ');
+        stringBuilder.append(birthday).append(' ');
+        stringBuilder.append(sex).append(' ');
+        stringBuilder.append(country).append(' ');
+        stringBuilder.append(city).append(' ');
+        stringBuilder.append(about).append(' ');
+        stringBuilder.append(image).append(' ');
+        return stringBuilder.toString();
     }
 }
