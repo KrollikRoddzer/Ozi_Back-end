@@ -1,6 +1,7 @@
 package by.fpmibsu.ozi;
 
 import by.fpmibsu.ozi.dao.DaoException;
+import by.fpmibsu.ozi.dao.PostDao;
 import by.fpmibsu.ozi.dao.UserDao;
 import by.fpmibsu.ozi.db.ConnectionCreator;
 import by.fpmibsu.ozi.entity.User;
@@ -15,6 +16,7 @@ public class OziApplication {
 
 	public static void main(String[] args) {
 		UserDao userDao = new UserDao();
+		PostDao postDao = new PostDao();
 		try {
 //			String phone, email, password, name, surname, sex, birthday;
 //			Scanner scanner = new Scanner(System.in);
@@ -30,13 +32,16 @@ public class OziApplication {
 //			System.out.println(userDao.create(user));
 
 			User found = userDao.findByPhone("+375445918769");
+
 			if (found != null)
 			{
-				found.setName("Stanislav");
-				userDao.update(found);
+
 			}
 
 			for (var item : userDao.findAll()) {
+				System.out.println(item);
+			}
+			for (var item : postDao.findAllByUserId(1)) {
 				System.out.println(item);
 			}
 		}

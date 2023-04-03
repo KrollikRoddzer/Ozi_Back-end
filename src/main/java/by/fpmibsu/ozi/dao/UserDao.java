@@ -17,6 +17,7 @@ public class UserDao implements Dao<User>
     public static final String SQL_SELECT_ALL_USERS = "SELECT * FROM user;";
     public static final String SQL_SELECT_BY_PHONE = "SELECT * FROM user WHERE phone = ?;";
     public static final String SQL_SELECT_BY_EMAIL = "SELECT * FROM user WHERE email = ?;";
+    public static final String SQL_SELECT_BY_ID = "SELECT * FROM user WHERE id = ?";
     public static final String SQL_DELETE_BY_USER = "DELETE FROM user WHERE id = ?";
     public static final String SQL_CREATE_USER = "INSERT INTO user(phone, email, password, name, surname, birthday, sex, country, city, about, photo) " +
             "values(?, ?, ?, ? ,?, ?, ?, ?, ?, ?, ?);";
@@ -59,6 +60,40 @@ public class UserDao implements Dao<User>
         try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_BY_PHONE))
         {
             statement.setString(1, phone);
+            ResultSet set = statement.executeQuery();
+            if (set.next())
+            {
+                return new User(
+                        set.getInt("id"),
+                        set.getString("phone"),
+                        set.getString("email"),
+                        set.getString("password"),
+                        set.getString("name"),
+                        set.getString("surname"),
+                        set.getDate("birthday"),
+                        set.getString("sex"),
+                        set.getString("country"),
+                        set.getString("city"),
+                        set.getString("about"),
+                        set.getBlob("photo")
+                );
+            }
+            else
+            {
+                return null;
+            }
+        }
+        catch (SQLException e)
+        {
+            throw new DaoException(e.getMessage(), e.getCause());
+        }
+    }
+
+    public User findById(Integer id) throws DaoException
+    {
+        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_BY_ID))
+        {
+            statement.setInt(1, id);
             ResultSet set = statement.executeQuery();
             if (set.next())
             {

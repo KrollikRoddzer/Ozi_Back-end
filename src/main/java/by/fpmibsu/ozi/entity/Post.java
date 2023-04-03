@@ -1,7 +1,7 @@
 package by.fpmibsu.ozi.entity;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 
 public class Post implements Serializable, Cloneable
 {
@@ -38,7 +38,20 @@ public class Post implements Serializable, Cloneable
         return text;
     }
 
+    public void setText(String text)
+    {
+        this.text = text;
+    }
+
     public Date getDate() {
         return date;
+    }
+
+    @Override
+    public String toString()
+    {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(id).append(" ").append(user).append(" ").append(text).append(" ").append(date);
+        return stringBuilder.toString();
     }
 }
