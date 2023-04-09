@@ -2,7 +2,6 @@ package by.fpmibsu.ozi.dao;
 
 import by.fpmibsu.ozi.db.ConnectionCreator;
 import by.fpmibsu.ozi.entity.Friend;
-import by.fpmibsu.ozi.entity.Post;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -10,9 +9,9 @@ import java.util.List;
 
 public class FriendDao implements Dao<Friend>
 {
-    public static final String SQL_SELECT_ALL = "SELECT * FROM friends";
-    public static final String SQL_DELETE_FRIEND = "DELETE FROM friends WHERE (user_id = ? AND friend_id = ?) OR (user_id = ? AND friend_id = ?);"
-    public static final String SQL_CREATE_FRIEND = "INSERT INTO friends(user_id, friend_id, date) VALUES(?, ?, ?),(?, ?, ?)";
+    public static final String SQL_SELECT_ALL = "SELECT * FROM friends;";
+    public static final String SQL_DELETE_FRIEND = "DELETE FROM friends WHERE (user_id = ? AND friend_id = ?) OR (user_id = ? AND friend_id = ?);";
+    public static final String SQL_CREATE_FRIEND = "INSERT INTO friends(user_id, friend_id, date) VALUES(?, ?, ?),(?, ?, ?);";
 
     @Override
     public List<Friend> findAll() throws DaoException {

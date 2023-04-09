@@ -14,9 +14,9 @@ import java.util.List;
 public class FriendRequestDao implements Dao<FriendRequest>
 {
 
-    public static final String SQL_SELECT_ALL = "SELECT * FROM friend_requests";
+    public static final String SQL_SELECT_ALL = "SELECT * FROM friend_requests;";
     public static final String SQL_DELETE_FRIEND_REQUEST = "DELETE FROM friend_requests WHERE (receiver_id = ? AND sender_id = ?) OR (sender_id = ? AND receiver_id = ?);";
-    public static final String SQL_CREATE_FRIEND_REQUEST = "INSERT INTO friend_requests(receiver_id, sender_id, date) VALUES(?, ?, ?),(?, ?, ?)";
+    public static final String SQL_CREATE_FRIEND_REQUEST = "INSERT INTO friend_requests(receiver_id, sender_id, date) VALUES(?, ?, ?),(?, ?, ?);";
 
     @Override
     public List<FriendRequest> findAll() throws DaoException {
