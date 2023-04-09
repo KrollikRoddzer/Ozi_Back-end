@@ -1,6 +1,7 @@
 package by.fpmibsu.ozi;
 
 import by.fpmibsu.ozi.dao.DaoException;
+import by.fpmibsu.ozi.dao.MessageDao;
 import by.fpmibsu.ozi.dao.PostDao;
 import by.fpmibsu.ozi.dao.UserDao;
 import by.fpmibsu.ozi.db.ConnectionCreator;
@@ -15,33 +16,20 @@ import java.util.Scanner;
 public class OziApplication {
 
 	public static void main(String[] args) {
-		UserDao userDao = new UserDao();
-		PostDao postDao = new PostDao();
+		ShowMessages();
+	}
+
+	public static void ShowMessages()
+	{
 		try {
-//			String phone, email, password, name, surname, sex, birthday;
-//			Scanner scanner = new Scanner(System.in);
-//			phone = scanner.nextLine();
-//			email = scanner.nextLine();
-//			password = scanner.nextLine();
-//			name = scanner.nextLine();
-//			surname = scanner.nextLine();
-//			birthday = scanner.nextLine();
-//			sex = scanner.nextLine();
-//
-//			User user = new User(-1, phone, email, password, name, surname, birthday, sex);
-//			System.out.println(userDao.create(user));
-
-			User found = userDao.findByPhone("+375445918769");
-
-			if (found != null)
+			UserDao userDao = new UserDao();
+			User user1 = userDao.findById(1);
+			User user2 = userDao.findById(2);
+			MessageDao messageDao = new MessageDao();
+			var list = messageDao.findBySenderAndReceiverId(user1, user2);
+			//list = messageDao.findAll();
+			for (var item : list)
 			{
-
-			}
-
-			for (var item : userDao.findAll()) {
-				System.out.println(item);
-			}
-			for (var item : postDao.findAllByUserId(1)) {
 				System.out.println(item);
 			}
 		}

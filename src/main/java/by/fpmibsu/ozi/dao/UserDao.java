@@ -211,8 +211,10 @@ public class UserDao implements Dao<User>
             statement.setString(10, user.getAbout());
             statement.setBlob(11, user.getImage());
 
-            statement.executeUpdate();
-            return user;
+            if (statement.executeUpdate() > 0)
+                return user;
+            else
+                return null;
         }
         catch (SQLException e)
         {

@@ -1,7 +1,7 @@
 package by.fpmibsu.ozi.entity;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 public class Message implements Serializable, Cloneable
 {
     private Integer id;
@@ -52,5 +52,23 @@ public class Message implements Serializable, Cloneable
 
     public String getText() {
         return text;
+    }
+
+    public void setText(String text)
+    {
+        this.text = text;
+    }
+
+    @Override
+    public String toString()
+    {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Message id: ").append(id).append('\n');
+        stringBuilder.append("Message text: ").append(text).append('\n');
+        stringBuilder.append("Receiver name: ").append(receiveUser.getName()).append('\n');
+        stringBuilder.append("Sender name: ").append(sentUser.getName()).append('\n');
+        stringBuilder.append("Date: ").append(messageDate).append('\n');
+
+        return stringBuilder.toString();
     }
 }
