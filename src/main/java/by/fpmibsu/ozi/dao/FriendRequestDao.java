@@ -3,6 +3,8 @@ package by.fpmibsu.ozi.dao;
 import by.fpmibsu.ozi.db.ConnectionCreator;
 import by.fpmibsu.ozi.entity.Friend;
 import by.fpmibsu.ozi.entity.FriendRequest;
+import by.fpmibsu.ozi.entity.User;
+import by.fpmibsu.ozi.entity.UserFriendsRequest;
 
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -75,12 +77,19 @@ public class FriendRequestDao implements Dao<FriendRequest>
         return null;
     }
 
-    public List<FriendRequest> findAllByReceiverId(int id) throws DaoException
+    public UserFriendsRequest findAllByReceiverId(int id) throws DaoException
     {
         try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_BY_RECEIVER_ID))
         {
             statement.setInt(1, id);
-            return createFromResultSet(statement.executeQuery());
+            List<FriendRequest> requests = createFromResultSet(statement.executeQuery());
+            ArrayList<User> result = new ArrayList<>();
+            User receiver = (new UserDao()).findById(id);
+            for (var item : requests)
+            {
+                result.add(item.getSender());
+            }
+            return new UserFriendsRequest(receiver, result);
         }
         catch (SQLException e)
         {

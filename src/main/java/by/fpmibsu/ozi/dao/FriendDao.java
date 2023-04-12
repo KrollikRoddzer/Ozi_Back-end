@@ -2,6 +2,8 @@ package by.fpmibsu.ozi.dao;
 
 import by.fpmibsu.ozi.db.ConnectionCreator;
 import by.fpmibsu.ozi.entity.Friend;
+import by.fpmibsu.ozi.entity.User;
+import by.fpmibsu.ozi.entity.UserFriends;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -72,13 +74,19 @@ public class FriendDao implements Dao<Friend>
         return null;
     }
 
-    public List<Friend> findFriendsByUserId(int id) throws DaoException
+    public UserFriends findFriendsByUserId(int id) throws DaoException
     {
         try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_ALL_BY_USER_ID))
         {
             statement.setInt(1, id);
-            ResultSet set = statement.executeQuery();
-            return createFromResultSet(set);
+            List<Friend> friends = createFromResultSet(statement.executeQuery());
+            User main = new UserDao().findById(id);
+            List<User> result = new ArrayList<>();
+            for (var item : friends)
+            {
+                result.add(item.getFriend());
+            }
+            return new UserFriends(main, result);
         }
         catch (SQLException e)
         {
