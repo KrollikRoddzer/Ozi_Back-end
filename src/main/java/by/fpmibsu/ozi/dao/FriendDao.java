@@ -12,7 +12,7 @@ public class FriendDao implements Dao<Friend>
     public static final String SQL_SELECT_ALL = "SELECT * FROM friends;";
     public static final String SQL_DELETE_FRIEND = "DELETE FROM friends WHERE (user_id = ? AND friend_id = ?) OR (user_id = ? AND friend_id = ?);";
     public static final String SQL_CREATE_FRIEND = "INSERT INTO friends(user_id, friend_id, date) VALUES(?, ?, ?),(?, ?, ?);";
-
+    public static final String SQL_SELECT_ALL_BY_USER_ID = "SELECT * FROM friends WHERE user_id = ?;";
     @Override
     public List<Friend> findAll() throws DaoException {
         try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_ALL))
@@ -70,6 +70,20 @@ public class FriendDao implements Dao<Friend>
     @Override
     public Friend update(Friend friend) throws DaoException {
         return null;
+    }
+
+    public List<Friend> findFriendsByUserId(int id) throws DaoException
+    {
+        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_ALL_BY_USER_ID))
+        {
+            statement.setInt(1, id);
+            ResultSet set = statement.executeQuery();
+            return createFromResultSet(set);
+        }
+        catch (SQLException e)
+        {
+            throw new DaoException(e.getMessage(), e.getCause());
+        }
     }
 
     private List<Friend> createFromResultSet(ResultSet set) throws SQLException, DaoException

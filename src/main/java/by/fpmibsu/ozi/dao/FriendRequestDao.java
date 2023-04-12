@@ -15,8 +15,9 @@ public class FriendRequestDao implements Dao<FriendRequest>
 {
 
     public static final String SQL_SELECT_ALL = "SELECT * FROM friend_requests;";
+    public static final String SQL_SELECT_BY_RECEIVER_ID = "SELECT * FROM friend_requests WHERE receiver_id = ?;";
     public static final String SQL_DELETE_FRIEND_REQUEST = "DELETE FROM friend_requests WHERE (receiver_id = ? AND sender_id = ?) OR (sender_id = ? AND receiver_id = ?);";
-    public static final String SQL_CREATE_FRIEND_REQUEST = "INSERT INTO friend_requests(receiver_id, sender_id, date) VALUES(?, ?, ?),(?, ?, ?);";
+    public static final String SQL_CREATE_FRIEND_REQUEST = "INSERT INTO friend_requests(receiver_id, sender_id, date) VALUES(?, ?, ?);";
 
     @Override
     public List<FriendRequest> findAll() throws DaoException {
@@ -60,9 +61,6 @@ public class FriendRequestDao implements Dao<FriendRequest>
             statement.setInt(1, receiver_id);
             statement.setInt(2, sender_id);
             statement.setDate(3, date);
-            statement.setInt(5, receiver_id);
-            statement.setInt(4, sender_id);
-            statement.setDate(6, date);
 
             return statement.executeUpdate() > 0;
         }
@@ -75,6 +73,19 @@ public class FriendRequestDao implements Dao<FriendRequest>
     @Override
     public FriendRequest update(FriendRequest friend) throws DaoException {
         return null;
+    }
+
+    public List<FriendRequest> findAllByReceiverId(int id) throws DaoException
+    {
+        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_BY_RECEIVER_ID))
+        {
+            statement.setInt(1, id);
+            return createFromResultSet(statement.executeQuery());
+        }
+        catch (SQLException e)
+        {
+            throw new DaoException(e.getMessage(), e.getCause());
+        }
     }
 
     private List<FriendRequest> createFromResultSet(ResultSet set) throws SQLException, DaoException
