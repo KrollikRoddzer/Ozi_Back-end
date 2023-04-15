@@ -26,4 +26,16 @@ public class UserFriends
     public List<User> getFriends() {
         return friends;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(user).append(" has friends: \n");
+        for (var item : friends)
+        {
+            stringBuilder.append(item).append('\n');
+        }
+
+        return stringBuilder.toString();
+    }
 }

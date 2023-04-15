@@ -28,4 +28,16 @@ public class UserFriendsRequest implements Serializable, Cloneable
     public List<User> getRequests() {
         return requests;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(user).append(" has friends request from: \n");
+        for (var item : requests)
+        {
+            stringBuilder.append(item).append('\n');
+        }
+
+        return stringBuilder.toString();
+    }
 }
