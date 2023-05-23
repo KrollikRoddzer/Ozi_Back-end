@@ -23,6 +23,8 @@ public class UserDao implements Dao<User>
             "values(?, ?, ?, ? ,?, ?, ?, ?, ?, ?, ?);";
     public static final String SQL_UPDATE_USER = "UPDATE user SET phone = ?, email = ?, password = ?, name = ?, surname = ?, birthday = ?, sex = ?, " +
             "country = ?, city = ?, about = ?, photo = ? WHERE id = ?";
+    public static final String SQL_SELECT_BY_NAME = "SELECT * FROM user WHERE CONCAT(name, ' ', surname) LIKE ?";
+
     @Override
     public List<User> findAll() throws DaoException {
         try(PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_ALL_USERS))
@@ -215,6 +217,40 @@ public class UserDao implements Dao<User>
                 return user;
             else
                 return null;
+        }
+        catch (SQLException e)
+        {
+            throw new DaoException(e.getMessage(), e.getCause());
+        }
+    }
+
+    public List<User> findByName(String name1) throws DaoException
+    {
+        name1 = '%' + name1 + '%';
+        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_BY_NAME))
+        {
+            statement.setString(1, name1);
+            List<User> result = new ArrayList<>();
+            ResultSet set = statement.executeQuery();
+            while(set.next())
+            {
+                Integer id = set.getInt("id");
+                String phone = set.getString("phone");
+                String email = set.getString("email");
+                String password = set.getString("password");
+                String name = set.getString("name");
+                String surname = set.getString("surname");
+                Date birthday = set.getDate("birthday");
+                String sex = set.getString("sex");
+                String country = set.getString("country");
+                String city = set.getString("city");
+                String about = set.getString("about");
+                Blob image = set.getBlob("photo");
+
+                result.add(new User(id, phone, email, password, name, surname, birthday, sex, country, city, about, image));
+            }
+
+            return result;
         }
         catch (SQLException e)
         {

@@ -3,6 +3,7 @@ package by.fpmibsu.ozi;
 import by.fpmibsu.ozi.dao.*;
 import by.fpmibsu.ozi.db.ConnectionCreator;
 import by.fpmibsu.ozi.entity.User;
+import by.fpmibsu.ozi.services.RegistrationService;
 
 import java.sql.Date;
 import java.sql.SQLException;
@@ -18,16 +19,8 @@ public class OziApplication {
 
 	public static void ShowMessages()
 	{
-		try {
-			UserDao userDao = new UserDao();
-			User user1 = userDao.findById(1);
-			DialogDao dialogDao = new DialogDao();
-			var tmp = dialogDao.getUserDialogs(user1);
-			System.out.println(tmp);
-		}
-		catch (DaoException e)
-		{
-			e.printStackTrace();
-		}
+		RegistrationService service = new RegistrationService(new UserDao());
+		User user = new User(0, "+375445918769", "stas315172004@mail.ru", "Stasyan04", "Stas", "Zaycev", new Date(2004, 02, 05), "m");
+		System.out.println(service.register(user));
 	}
 }
