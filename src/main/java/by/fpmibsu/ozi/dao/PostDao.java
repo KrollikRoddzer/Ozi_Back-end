@@ -11,9 +11,9 @@ import java.util.List;
 
 public class PostDao implements Dao<Post>
 {
-    public static final String SQL_SELECT_ALL_POSTS = "SELECT * FROM posts ORDER BY date;";
+    public static final String SQL_SELECT_ALL_POSTS = "SELECT * FROM posts ORDER BY date, id;";
 
-    public static final String SQL_SELECT_ALL_POSTS_BY_USER_ID = "SELECT * FROM posts WHERE user_id = ? ORDER BY date";
+    public static final String SQL_SELECT_ALL_POSTS_BY_USER_ID = "SELECT * FROM posts WHERE user_id = ? ORDER BY date, id";
 
     public static final String SQL_CREATE_POST = "INSERT INTO posts(user_id, text, date) values(?, ?, ?)";
 

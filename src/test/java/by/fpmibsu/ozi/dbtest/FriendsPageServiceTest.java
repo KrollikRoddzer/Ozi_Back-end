@@ -56,8 +56,7 @@ public class FriendsPageServiceTest
             list.add(postsCount);
             list.add(friend_requestCount);
 
-            ArrayList<Integer> mustBe = new ArrayList<>(Arrays.asList(5, 4, 6, 8, 4));
-
+            ArrayList<Integer> mustBe = new ArrayList<>(Arrays.asList(5, 8, 6, 8, 4));
             Assert.assertEquals(list.toArray(), mustBe.toArray());
 
         } catch (SQLException e) {

@@ -12,7 +12,7 @@ public class ProfilePageService
     private final PostDao postDao;
     private final FriendRequestDao friendRequestDao;
 
-    ProfilePageService(UserDao userDao, FriendDao friendDao, PostDao postDao, FriendRequestDao friendRequestDao)
+    public ProfilePageService(UserDao userDao, FriendDao friendDao, PostDao postDao, FriendRequestDao friendRequestDao)
     {
         this.userDao = userDao;
         this.friendDao = friendDao;
@@ -44,23 +44,26 @@ public class ProfilePageService
 
     public Status getStatus(Integer userId, Integer unknownId) throws DaoException
     {
-        if (unknownId == null) return Status.NOT_REGISTERED;
+        if (unknownId == null) return Status.ERROR;
+        if (userId == null) return Status.NOT_REGISTERED;
         if (userId.equals(unknownId)) return Status.ME;
-        List<User> users = friendDao.findFriendsByUserId(userId).getFriends();
+        List<User> users = friendDao.findFriendsByUserId(unknownId).getFriends();
         for (var user : users)
         {
-            if (user.getId().equals(unknownId)) return Status.FRIEND;
+            if (user.getId().equals(userId)) return Status.FRIEND;
         }
-        users = friendRequestDao.findAllByReceiverId(userId).getRequests();
-        for (var user : users)
-        {
-            if (user.getId().equals(unknownId)) return Status.FOLLOWER;
-        }
-
         users = friendRequestDao.findAllByReceiverId(unknownId).getRequests();
         for (var user : users)
         {
+            //System.out.println(user);
             if (user.getId().equals(userId)) return Status.REQUEST_SEND;
+        }
+
+        users = friendRequestDao.findAllByReceiverId(userId).getRequests();
+        for (var user : users)
+        {
+            //System.out.println(user);
+            if (user.getId().equals(unknownId)) return Status.FOLLOWER;
         }
 
         return Status.NO_ONE;

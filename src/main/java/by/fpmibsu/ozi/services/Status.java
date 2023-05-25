@@ -7,5 +7,6 @@ public enum Status
     REQUEST_SEND,
     ME,
     NO_ONE,
-    NOT_REGISTERED
+    NOT_REGISTERED,
+    ERROR
 }
