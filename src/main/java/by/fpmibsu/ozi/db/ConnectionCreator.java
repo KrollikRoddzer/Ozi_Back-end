@@ -16,7 +16,7 @@ public class ConnectionCreator
     {
         try
         {
-            PROPERTIES.load(new FileReader("dbProps/db.properties"));
+            PROPERTIES.load(new FileReader("dbProps/dbtest.properties"));
             String driverName = (String) PROPERTIES.get("db.driver");
             Class.forName(driverName);
         } catch (ClassNotFoundException | IOException e) {

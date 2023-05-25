@@ -7,7 +7,7 @@ import by.fpmibsu.ozi.entity.User;
 import java.sql.Date;
 import java.util.List;
 
-public class MessageService
+public class MessagePageService
 {
     private final UserDao userDao;
 
@@ -15,7 +15,7 @@ public class MessageService
 
     private final FriendDao friendDao;
 
-    public MessageService(UserDao userDao, MessageDao messageDao, FriendDao friendDao)
+    public MessagePageService(UserDao userDao, MessageDao messageDao, FriendDao friendDao)
     {
         this.userDao = userDao;
         this.friendDao = friendDao;

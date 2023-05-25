@@ -5,14 +5,14 @@ import by.fpmibsu.ozi.entity.*;
 
 import java.util.List;
 
-public class ProfileService
+public class ProfilePageService
 {
     private final UserDao userDao;
     private final FriendDao friendDao;
     private final PostDao postDao;
     private final FriendRequestDao friendRequestDao;
 
-    ProfileService(UserDao userDao, FriendDao friendDao, PostDao postDao, FriendRequestDao friendRequestDao)
+    ProfilePageService(UserDao userDao, FriendDao friendDao, PostDao postDao, FriendRequestDao friendRequestDao)
     {
         this.userDao = userDao;
         this.friendDao = friendDao;
@@ -69,6 +69,7 @@ public class ProfileService
     public void editAbout(Integer userId, String about) throws DaoException
     {
         User user = userDao.findById(userId);
+        if (user == null) return;
         user.setAbout(about);
         userDao.update(user);
     }

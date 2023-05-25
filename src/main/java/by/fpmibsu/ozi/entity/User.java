@@ -80,8 +80,8 @@ public class User implements Serializable, Cloneable
         this.password = password;
         this.name = name;
         this.surname = surname;
-        long d = java.util.Date.parse(birthday);
-        this.birthday = new Date(d);
+        java.util.Date tmp = new java.util.Date(birthday);
+        this.birthday = new Date(tmp.getYear(), tmp.getMonth(), tmp.getDay());
         this.sex = sex;
         this.country = null;
         this.city = null;

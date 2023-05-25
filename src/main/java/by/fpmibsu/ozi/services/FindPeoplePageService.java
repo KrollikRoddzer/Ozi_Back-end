@@ -6,11 +6,11 @@ import by.fpmibsu.ozi.entity.User;
 
 import java.util.List;
 
-public class FindPeopleService
+public class FindPeoplePageService
 {
     private final UserDao userDao;
 
-    FindPeopleService(UserDao userDao)
+    FindPeoplePageService(UserDao userDao)
     {
         this.userDao = userDao;
     }

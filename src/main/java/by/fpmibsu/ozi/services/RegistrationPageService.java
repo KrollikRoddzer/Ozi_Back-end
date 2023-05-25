@@ -4,13 +4,11 @@ import by.fpmibsu.ozi.dao.DaoException;
 import by.fpmibsu.ozi.dao.UserDao;
 import by.fpmibsu.ozi.entity.User;
 
-import java.sql.SQLException;
-
-public class RegistrationService
+public class RegistrationPageService
 {
     UserDao userDao;
 
-    public RegistrationService(UserDao userDao)
+    public RegistrationPageService(UserDao userDao)
     {
         this.userDao = userDao;
 
@@ -20,15 +18,14 @@ public class RegistrationService
     {
         try
         {
-            userDao.create(user);
+            Boolean res = userDao.create(user);
+            if (!res) return null;
             return userDao.findByPhone(user.getPhone());
         }
         catch (DaoException e)
         {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
-        finally {
-            return null;
-        }
+        return null;
     }
 }

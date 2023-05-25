@@ -6,10 +6,10 @@ import by.fpmibsu.ozi.entity.User;
 
 import java.security.NoSuchAlgorithmException;
 
-public class LoginService
+public class LoginPageService
 {
     UserDao userDao;
-    public LoginService(UserDao userDao)
+    public LoginPageService(UserDao userDao)
     {
         this.userDao = userDao;
     }
@@ -27,21 +27,19 @@ public class LoginService
         } catch (DaoException e) {
             e.printStackTrace();
         }
-        finally {
-            return false;
-        }
+        return false;
     }
 
     private Boolean comparePassword(String password, String toCompare)
     {
         try {
             String hashPassword = User.makeHash(password);
+//            System.out.println(hashPassword);
+//            System.out.println(toCompare);
             return hashPassword.equals(toCompare);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
-        finally {
-            return false;
-        }
+        return false;
     }
 }
