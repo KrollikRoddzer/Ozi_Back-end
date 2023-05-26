@@ -54,6 +54,7 @@ public class MessageDao implements Dao<Message>
     public boolean create(Message message) throws DaoException {
         try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_CREATE_MESSAGE))
         {
+            if (message.getReceiveUser() == null || message.getSentUser() == null) return false;
             statement.setInt(1, message.getReceiveUser().getId());
             statement.setInt(2, message.getSentUser().getId());
             statement.setString(3, message.getText());
@@ -88,6 +89,7 @@ public class MessageDao implements Dao<Message>
     {
         try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_BY_RECEIVER_AND_SENDER))
         {
+            if (receiver == null || sender == null) return new ArrayList<>();
             statement.setInt(1, receiver.getId());
             statement.setInt(2, sender.getId());
             statement.setInt(3, sender.getId());

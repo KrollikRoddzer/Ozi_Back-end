@@ -262,4 +262,9 @@ public class User implements Serializable, Cloneable
         stringBuilder.append(image).append(' ');
         return stringBuilder.toString();
     }
+
+    public Boolean equals(User user)
+    {
+        return this.getId().equals(user.getId());
+    }
 }

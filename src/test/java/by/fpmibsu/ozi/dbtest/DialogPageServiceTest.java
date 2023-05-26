@@ -1,11 +1,19 @@
 package by.fpmibsu.ozi.dbtest;
 
+import by.fpmibsu.ozi.dao.DaoException;
+import by.fpmibsu.ozi.dao.FriendDao;
+import by.fpmibsu.ozi.dao.MessageDao;
+import by.fpmibsu.ozi.dao.UserDao;
 import by.fpmibsu.ozi.db.ConnectionCreator;
+import by.fpmibsu.ozi.entity.User;
+import by.fpmibsu.ozi.services.DialogPageService;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.sql.Date;
+import java.util.*;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,6 +22,7 @@ import java.util.Arrays;
 
 public class DialogPageServiceTest
 {
+    private final DialogPageService service = new DialogPageService(new UserDao(), new MessageDao(), new FriendDao());
     private static final String SQL_SELECT_USER = "SELECT count(*) as tmp FROM user;";
     private static final String SQL_SELECT_FRIENDS = "SELECT count(*) as tmp FROM friends;";
     private static final String SQL_SELECT_MESSAGES = "SELECT count(*) as tmp FROM messages;";
@@ -61,6 +70,65 @@ public class DialogPageServiceTest
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    @Test
+    public void getFriendsTest()
+    {
+        try {
+            List<User> users = service.getFriends(1);
+            ArrayList<Integer> mustBe = new ArrayList<>(Arrays.asList(2, 3, 4, 5));
+            Assert.assertEquals(users.size(), mustBe.size());
+            if (users.size() == mustBe.size())
+                for (int i = 0; i < mustBe.size(); ++i)
+                {
+                    Assert.assertEquals(mustBe.get(0), users.get(0).getId());
+                }
+        } catch (DaoException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    @Test
+    public void getMessagesTest()
+    {
+        try
+        {
+            int ans = 3;
+            Assert.assertEquals(ans, service.getMessages(1, 2).size());
+            Assert.assertEquals(ans, service.getMessages(2, 1).size());
+            ans = 2;
+            Assert.assertEquals(ans, service.getMessages(2, 3).size());
+            Assert.assertEquals(ans, service.getMessages(3, 2).size());
+            ans = 0;
+            Assert.assertEquals(ans, service.getMessages(3, 5).size());
+            Assert.assertEquals(ans, service.getMessages(6, 8).size());
+        }
+        catch (DaoException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void sendMessageTest()
+    {
+        try
+        {
+            service.sendMessage(1, 2, "Hello michael!", new Date(java.util.Date.parse("2023/01/01")));
+            int ans = 4;
+            Assert.assertEquals(ans, service.getMessages(1, 2).size());
+            Assert.assertEquals(ans, service.getMessages(2, 1).size());
+            service.sendMessage(1, 10, "Hi", new Date(java.util.Date.parse("2023/01/01")));
+            ans = 0;
+            Assert.assertEquals(ans, service.getMessages(1, 10).size());
+            Assert.assertEquals(ans, service.getMessages(10, 1).size());
+        }
+        catch (DaoException e)
+        {
+            e.printStackTrace();
         }
     }
     @After
