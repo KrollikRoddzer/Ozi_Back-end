@@ -1,5 +1,7 @@
 package by.fpmibsu.ozi.dbtest;
 
+import by.fpmibsu.ozi.dao.DaoException;
+import by.fpmibsu.ozi.dao.FriendRequestDao;
 import by.fpmibsu.ozi.db.ConnectionCreator;
 import org.junit.After;
 import org.junit.Assert;
@@ -14,6 +16,7 @@ import java.util.Arrays;
 
 public class FollowersPageService
 {
+    by.fpmibsu.ozi.services.FollowersPageService service = new by.fpmibsu.ozi.services.FollowersPageService(new FriendRequestDao());
     private static final String SQL_SELECT_USER = "SELECT count(*) as tmp FROM user;";
     private static final String SQL_SELECT_FRIENDS = "SELECT count(*) as tmp FROM friends;";
     private static final String SQL_SELECT_MESSAGES = "SELECT count(*) as tmp FROM messages;";
@@ -61,6 +64,21 @@ public class FollowersPageService
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    @Test
+    public void getFollowersTest()
+    {
+        try
+        {
+            Assert.assertEquals((int)1, service.getFollowers(3).size());
+            Assert.assertEquals((int)2, service.getFollowers(2).size());
+            Assert.assertEquals((int)0, service.getFollowers(1).size());
+        }
+        catch (DaoException e)
+        {
+            e.printStackTrace();
         }
     }
     @After

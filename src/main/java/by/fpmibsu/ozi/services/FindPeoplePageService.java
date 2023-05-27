@@ -15,7 +15,7 @@ public class FindPeoplePageService
     static Logger logger = LogManager.getLogger(FindPeoplePageService.class.getName());
     private final UserDao userDao;
 
-    FindPeoplePageService(UserDao userDao)
+    public FindPeoplePageService(UserDao userDao)
     {
         logger.log(Level.INFO, "Created FindPeoplePageService.\n");
         this.userDao = userDao;

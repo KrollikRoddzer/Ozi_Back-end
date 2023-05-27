@@ -1,6 +1,9 @@
 package by.fpmibsu.ozi.dbtest;
 
+import by.fpmibsu.ozi.dao.DaoException;
+import by.fpmibsu.ozi.dao.UserDao;
 import by.fpmibsu.ozi.db.ConnectionCreator;
+import by.fpmibsu.ozi.services.FindPeoplePageService;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -14,6 +17,7 @@ import java.util.Arrays;
 
 public class FindPeopleServiceTest
 {
+    private FindPeoplePageService service = new FindPeoplePageService(new UserDao());
     private static final String SQL_SELECT_USER = "SELECT count(*) as tmp FROM user;";
     private static final String SQL_SELECT_FRIENDS = "SELECT count(*) as tmp FROM friends;";
     private static final String SQL_SELECT_MESSAGES = "SELECT count(*) as tmp FROM messages;";
@@ -62,6 +66,20 @@ public class FindPeopleServiceTest
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    @Test
+    public void findByNameTest()
+    {
+        try
+        {
+            Assert.assertEquals((int)4, service.findByName("s").size());
+            Assert.assertEquals((int)2, service.findByName("dasha").size());
+        }
+        catch (DaoException e)
+        {
+            e.printStackTrace();
         }
     }
     @After
