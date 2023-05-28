@@ -16,10 +16,14 @@ class ConnectionCreator
     {
         try
         {
-            PROPERTIES.load(new FileReader("dbProps/dbtest.properties"));
+            //PROPERTIES.load(new FileReader("dbProps/db.properties"));
+            PROPERTIES.setProperty("db.url", "jdbc:mysql://127.0.0.1:3306/ozi");
+            PROPERTIES.setProperty("password", "Stasyan04");
+            PROPERTIES.setProperty("user", "root");
+            PROPERTIES.setProperty("db.driver", "com.mysql.cj.jdbc.Driver");
             String driverName = (String) PROPERTIES.get("db.driver");
             Class.forName(driverName);
-        } catch (ClassNotFoundException | IOException e) {
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
         DATABASE_URL = (String) PROPERTIES.get("db.url");

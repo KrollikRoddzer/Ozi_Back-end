@@ -20,7 +20,7 @@ public class LoginPageService
         this.userDao = userDao;
     }
 
-    public Boolean login(String phoneOrEmail , String password)
+    public Integer login(String phoneOrEmail , String password)
     {
         logger.log(Level.INFO, "User is trying to log in.");
         try {
@@ -31,23 +31,23 @@ public class LoginPageService
             }
             if (user == null) {
                 logger.log(Level.INFO, "No user with following phone or email: " + phoneOrEmail + '.');
-                return false;
+                return null;
             }
 
             boolean res = comparePassword(password, user.getPassword());
             if (!res)
             {
                 logger.log(Level.INFO, "Unable to log in, wrong password.");
-                return false;
+                return null;
             }
             logger.log(Level.INFO, "Successfully logged in.");
-            return true;
+            return user.getId();
 
         } catch (DaoException | InterruptedException e) {
             logger.log(Level.ERROR, "Error occurred: " + e.getMessage());
             e.printStackTrace();
         }
-        return false;
+        return null;
     }
 
     private Boolean comparePassword(String password, String toCompare)

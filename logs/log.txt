@@ -329,3 +329,6 @@
 2023-05-28 13:43:03 [main] ERROR by.fpmibsu.ozi.services.RegistrationPageService- Unable to create user because Duplicate entry '+375445918769' for key 'user.phone_UNIQUE'
 2023-05-28 13:43:03 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Registering user.
 2023-05-28 13:43:03 [main] ERROR by.fpmibsu.ozi.services.RegistrationPageService- Unable to create user because Duplicate entry 'stas315172004@mail.ru' for key 'user.email_UNIQUE'
+2023-05-28 16:27:16 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Create RegistrationPageService.
+2023-05-28 16:27:16 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Registering user.
+2023-05-28 16:27:17 [main] ERROR by.fpmibsu.ozi.services.RegistrationPageService- Unable to create user because Duplicate entry '+375445918769' for key 'user.phone_UNIQUE'

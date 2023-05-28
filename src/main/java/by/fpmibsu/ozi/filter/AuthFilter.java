@@ -9,7 +9,7 @@ import java.io.IOException;
 
 import static java.util.Objects.nonNull;
 
-//@WebFilter({"/ozi", "/ozi/profile", "/ozi/friends", "/register"})
+@WebFilter({"/ozi", "/"})
 public class AuthFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) {
@@ -20,13 +20,14 @@ public class AuthFilter implements Filter {
         final HttpServletRequest req = (HttpServletRequest) request;
         final HttpServletResponse res = (HttpServletResponse) response;
 
-        final Long id = (Long) req.getSession().getAttribute("userUd");
         final HttpSession session = req.getSession();
+        final Integer id = (Integer) session.getAttribute("userId");
+
 
         if (nonNull(session) && nonNull(id)) {
             filterChain.doFilter(request, response);
         } else {
-            res.sendRedirect("/null");
+            res.sendRedirect("/ozi/login");
         }
     }
     @Override
