@@ -27,20 +27,17 @@ public class DialogPageService
         this.messageDao = messageDao;
     }
 
-    public List<User> getFriends(Integer userId) throws DaoException
-    {
+    public List<User> getFriends(Integer userId) throws DaoException, InterruptedException {
         logger.log(Level.INFO, "Getting all friends of user with id: " + userId + '.');
         return friendDao.findFriendsByUserId(userId).getFriends();
     }
 
-    public List<Message> getMessages(Integer userId, Integer messagePersonId) throws DaoException
-    {
+    public List<Message> getMessages(Integer userId, Integer messagePersonId) throws DaoException, InterruptedException {
         logger.log(Level.INFO, "Getting messages of users with ids: " + userId + " and " + messagePersonId + '.');
         return messageDao.findBySenderAndReceiverId(userDao.findById(userId), userDao.findById(messagePersonId));
     }
 
-    public void sendMessage(Integer userId, Integer messagePersonId, String text, Date messageDate) throws DaoException
-    {
+    public void sendMessage(Integer userId, Integer messagePersonId, String text, Date messageDate) throws DaoException, InterruptedException {
         logger.log(Level.INFO, "Sending message from user with id " + userId + " to user with id " + messagePersonId + '.');
         boolean res = messageDao.create(new Message(0, userDao.findById(userId), userDao.findById(messagePersonId), messageDate, text));
         if (res) logger.log(Level.INFO, "Successfully sent.");

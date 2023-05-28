@@ -1,10 +1,11 @@
 package by.fpmibsu.ozi.dao;
 
-import by.fpmibsu.ozi.db.ConnectionCreator;
+import by.fpmibsu.ozi.db.ConnectionPool;
 import by.fpmibsu.ozi.entity.Message;
 import by.fpmibsu.ozi.entity.User;
 
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -25,8 +26,9 @@ public class MessageDao implements Dao<Message>
     public static final String SQL_SELECT_BY_RECEIVER_AND_SENDER = "SELECT * FROM messages WHERE (receiver_id = ? AND sender_id = ?) OR (receiver_id = ? AND sender_id = ?) ORDER BY date;";
 
     @Override
-    public List<Message> findAll() throws DaoException {
-        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_ALL))
+    public List<Message> findAll() throws DaoException, InterruptedException {
+        Connection connection = ConnectionPool.getConnection();
+        try (PreparedStatement statement = connection.prepareStatement(SQL_SELECT_ALL))
         {
             ResultSet set = statement.executeQuery();
             return createFromResultSet(set);
@@ -35,11 +37,15 @@ public class MessageDao implements Dao<Message>
         {
             throw new DaoException(e.getMessage(), e.getCause());
         }
+        finally {
+            ConnectionPool.closeConnection(connection);
+        }
     }
 
     @Override
-    public boolean delete(Message message) throws DaoException {
-        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_DELETE_MESSAGE))
+    public boolean delete(Message message) throws DaoException, InterruptedException {
+        Connection connection = ConnectionPool.getConnection();
+        try (PreparedStatement statement = connection.prepareStatement(SQL_DELETE_MESSAGE))
         {
             statement.setInt(1, message.getId());
             return statement.executeUpdate() > 0;
@@ -48,11 +54,15 @@ public class MessageDao implements Dao<Message>
         {
             throw new DaoException(e.getMessage(), e.getCause());
         }
+        finally {
+            ConnectionPool.closeConnection(connection);
+        }
     }
 
     @Override
-    public boolean create(Message message) throws DaoException {
-        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_CREATE_MESSAGE))
+    public boolean create(Message message) throws DaoException, InterruptedException {
+        Connection connection = ConnectionPool.getConnection();
+        try (PreparedStatement statement = connection.prepareStatement(SQL_CREATE_MESSAGE))
         {
             if (message.getReceiveUser() == null || message.getSentUser() == null) return false;
             statement.setInt(1, message.getReceiveUser().getId());
@@ -66,11 +76,15 @@ public class MessageDao implements Dao<Message>
         {
             throw new DaoException(e.getMessage(), e.getCause());
         }
+        finally {
+            ConnectionPool.closeConnection(connection);
+        }
     }
 
     @Override
-    public Message update(Message message) throws DaoException {
-        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_UPDATE_MESSAGE))
+    public Message update(Message message) throws DaoException, InterruptedException {
+        Connection connection = ConnectionPool.getConnection();
+        try (PreparedStatement statement = connection.prepareStatement(SQL_UPDATE_MESSAGE))
         {
             statement.setString(1, message.getText());
 
@@ -83,11 +97,14 @@ public class MessageDao implements Dao<Message>
         {
             throw new DaoException(e.getMessage(), e.getCause());
         }
+        finally {
+            ConnectionPool.closeConnection(connection);
+        }
     }
 
-    public List<Message> findBySenderAndReceiverId(User receiver, User sender) throws DaoException
-    {
-        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_BY_RECEIVER_AND_SENDER))
+    public List<Message> findBySenderAndReceiverId(User receiver, User sender) throws DaoException, InterruptedException {
+        Connection connection = ConnectionPool.getConnection();
+        try (PreparedStatement statement = connection.prepareStatement(SQL_SELECT_BY_RECEIVER_AND_SENDER))
         {
             if (receiver == null || sender == null) return new ArrayList<>();
             statement.setInt(1, receiver.getId());
@@ -101,6 +118,9 @@ public class MessageDao implements Dao<Message>
         catch (SQLException e)
         {
             throw new DaoException(e.getMessage(), e.getCause());
+        }
+        finally {
+            ConnectionPool.closeConnection(connection);
         }
     }
 
@@ -126,6 +146,8 @@ public class MessageDao implements Dao<Message>
         catch (SQLException | DaoException e)
         {
             throw new DaoException(e.getMessage(), e.getCause());
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
     }
 }

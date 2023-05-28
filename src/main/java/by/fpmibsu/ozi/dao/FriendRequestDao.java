@@ -1,15 +1,11 @@
 package by.fpmibsu.ozi.dao;
 
-import by.fpmibsu.ozi.db.ConnectionCreator;
-import by.fpmibsu.ozi.entity.Friend;
+import by.fpmibsu.ozi.db.ConnectionPool;
 import by.fpmibsu.ozi.entity.FriendRequest;
 import by.fpmibsu.ozi.entity.User;
 import by.fpmibsu.ozi.entity.UserFriendsRequest;
 
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,8 +18,9 @@ public class FriendRequestDao implements Dao<FriendRequest>
     public static final String SQL_CREATE_FRIEND_REQUEST = "INSERT INTO friend_requests(receiver_id, sender_id, date) VALUES(?, ?, ?);";
 
     @Override
-    public List<FriendRequest> findAll() throws DaoException {
-        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_ALL))
+    public List<FriendRequest> findAll() throws DaoException, InterruptedException {
+        Connection connection = ConnectionPool.getConnection();
+        try (PreparedStatement statement = connection.prepareStatement(SQL_SELECT_ALL))
         {
             ResultSet set = statement.executeQuery();
             return createFromResultSet(set);
@@ -32,11 +29,15 @@ public class FriendRequestDao implements Dao<FriendRequest>
         {
             throw new DaoException(e.getMessage(), e.getCause());
         }
+        finally {
+            ConnectionPool.closeConnection(connection);
+        }
     }
 
     @Override
-    public boolean delete(FriendRequest friend) throws DaoException {
-        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_DELETE_FRIEND_REQUEST))
+    public boolean delete(FriendRequest friend) throws DaoException, InterruptedException {
+        Connection connection = ConnectionPool.getConnection();
+        try (PreparedStatement statement = connection.prepareStatement(SQL_DELETE_FRIEND_REQUEST))
         {
             int receiver_id = friend.getReceiver().getId();
             int sender_id = friend.getSender().getId();
@@ -50,12 +51,15 @@ public class FriendRequestDao implements Dao<FriendRequest>
         } catch (SQLException e) {
             throw new DaoException(e.getMessage(), e.getCause());
         }
-
+        finally {
+            ConnectionPool.closeConnection(connection);
+        }
     }
 
     @Override
-    public boolean create(FriendRequest friend) throws DaoException {
-        try(PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_CREATE_FRIEND_REQUEST))
+    public boolean create(FriendRequest friend) throws DaoException, InterruptedException {
+        Connection connection = ConnectionPool.getConnection();
+        try(PreparedStatement statement = connection.prepareStatement(SQL_CREATE_FRIEND_REQUEST))
         {
             int receiver_id = friend.getReceiver().getId();
             int sender_id = friend.getSender().getId();
@@ -70,6 +74,10 @@ public class FriendRequestDao implements Dao<FriendRequest>
         {
             throw new DaoException(e.getMessage(), e.getCause());
         }
+        finally
+        {
+            ConnectionPool.closeConnection(connection);
+        }
     }
 
     @Override
@@ -77,9 +85,9 @@ public class FriendRequestDao implements Dao<FriendRequest>
         return null;
     }
 
-    public UserFriendsRequest findAllByReceiverId(int id) throws DaoException
-    {
-        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_BY_RECEIVER_ID))
+    public UserFriendsRequest findAllByReceiverId(int id) throws DaoException, InterruptedException {
+        Connection connection = ConnectionPool.getConnection();
+        try (PreparedStatement statement = connection.prepareStatement(SQL_SELECT_BY_RECEIVER_ID))
         {
             statement.setInt(1, id);
             List<FriendRequest> requests = createFromResultSet(statement.executeQuery());
@@ -94,6 +102,9 @@ public class FriendRequestDao implements Dao<FriendRequest>
         catch (SQLException e)
         {
             throw new DaoException(e.getMessage(), e.getCause());
+        }
+        finally {
+            ConnectionPool.closeConnection(connection);
         }
     }
 
@@ -112,7 +123,7 @@ public class FriendRequestDao implements Dao<FriendRequest>
 
             return list;
         }
-        catch (SQLException | DaoException e)
+        catch (SQLException | DaoException | InterruptedException e)
         {
             throw new DaoException(e.getMessage(), e.getCause());
         }

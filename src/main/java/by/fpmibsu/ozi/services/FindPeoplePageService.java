@@ -21,8 +21,7 @@ public class FindPeoplePageService
         this.userDao = userDao;
     }
 
-    public List<User> findByName(String name) throws DaoException
-    {
+    public List<User> findByName(String name) throws DaoException, InterruptedException {
         logger.log(Level.INFO, "Finding people by name in method findByName.");
         return userDao.findByName(name);
     }

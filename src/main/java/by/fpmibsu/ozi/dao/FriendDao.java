@@ -1,6 +1,6 @@
 package by.fpmibsu.ozi.dao;
 
-import by.fpmibsu.ozi.db.ConnectionCreator;
+import by.fpmibsu.ozi.db.ConnectionPool;
 import by.fpmibsu.ozi.entity.Friend;
 import by.fpmibsu.ozi.entity.User;
 import by.fpmibsu.ozi.entity.UserFriends;
@@ -16,8 +16,9 @@ public class FriendDao implements Dao<Friend>
     public static final String SQL_CREATE_FRIEND = "INSERT INTO friends(user_id, friend_id, date) VALUES(?, ?, ?),(?, ?, ?);";
     public static final String SQL_SELECT_ALL_BY_USER_ID = "SELECT * FROM friends WHERE user_id = ? ORDER BY friend_id;";
     @Override
-    public List<Friend> findAll() throws DaoException {
-        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_ALL))
+    public List<Friend> findAll() throws DaoException, InterruptedException {
+        Connection connection = ConnectionPool.getConnection();
+        try (PreparedStatement statement = connection.prepareStatement(SQL_SELECT_ALL))
         {
             ResultSet set = statement.executeQuery();
             return createFromResultSet(set);
@@ -26,11 +27,15 @@ public class FriendDao implements Dao<Friend>
         {
             throw new DaoException(e.getMessage(), e.getCause());
         }
+        finally {
+            ConnectionPool.closeConnection(connection);
+        }
     }
 
     @Override
-    public boolean delete(Friend friend) throws DaoException {
-        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_DELETE_FRIEND))
+    public boolean delete(Friend friend) throws DaoException, InterruptedException {
+        Connection connection = ConnectionPool.getConnection();
+        try (PreparedStatement statement = connection.prepareStatement(SQL_DELETE_FRIEND))
         {
             int user_id = friend.getPerson().getId();
             int friend_id = friend.getFriend().getId();
@@ -44,12 +49,16 @@ public class FriendDao implements Dao<Friend>
         } catch (SQLException e) {
             throw new DaoException(e.getMessage(), e.getCause());
         }
+        finally {
+            ConnectionPool.closeConnection(connection);
+        }
 
     }
 
     @Override
-    public boolean create(Friend friend) throws DaoException {
-        try(PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_CREATE_FRIEND))
+    public boolean create(Friend friend) throws DaoException, InterruptedException {
+        Connection connection = ConnectionPool.getConnection();
+        try(PreparedStatement statement = connection.prepareStatement(SQL_CREATE_FRIEND))
         {
             int user_id = friend.getPerson().getId();
             int frined_id = friend.getFriend().getId();
@@ -67,6 +76,9 @@ public class FriendDao implements Dao<Friend>
         {
             throw new DaoException(e.getMessage(), e.getCause());
         }
+        finally {
+            ConnectionPool.closeConnection(connection);
+        }
     }
 
     @Override
@@ -74,9 +86,9 @@ public class FriendDao implements Dao<Friend>
         return null;
     }
 
-    public UserFriends findFriendsByUserId(int id) throws DaoException
-    {
-        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_ALL_BY_USER_ID))
+    public UserFriends findFriendsByUserId(int id) throws DaoException, InterruptedException {
+        Connection connection = ConnectionPool.getConnection();
+        try (PreparedStatement statement = connection.prepareStatement(SQL_SELECT_ALL_BY_USER_ID))
         {
             statement.setInt(1, id);
             List<Friend> friends = createFromResultSet(statement.executeQuery());
@@ -91,6 +103,9 @@ public class FriendDao implements Dao<Friend>
         catch (SQLException e)
         {
             throw new DaoException(e.getMessage(), e.getCause());
+        }
+        finally {
+            ConnectionPool.closeConnection(connection);
         }
     }
 
@@ -109,7 +124,7 @@ public class FriendDao implements Dao<Friend>
 
             return list;
         }
-        catch (SQLException | DaoException e)
+        catch (SQLException | DaoException | InterruptedException e)
         {
             throw new DaoException(e.getMessage(), e.getCause());
         }

@@ -21,8 +21,7 @@ public class FollowersPageService
         this.friendRequestDao = friendRequestDao;
     }
 
-    public List<User> getFollowers(Integer userId) throws DaoException
-    {
+    public List<User> getFollowers(Integer userId) throws DaoException, InterruptedException {
         logger.log(Level.INFO, "Getting all followers of user with id " + userId + '.');
         return friendRequestDao.findAllByReceiverId(userId).getRequests();
     }

@@ -26,34 +26,29 @@ public class ProfilePageService
         this.friendRequestDao = friendRequestDao;
     }
 
-    public Integer getFriendsCount(Integer userId) throws DaoException
-    {
+    public Integer getFriendsCount(Integer userId) throws DaoException, InterruptedException {
         logger.log(Level.INFO, "Getting friends count of user with id: " + userId + '.');
         UserFriends friends = friendDao.findFriendsByUserId(userId);
         return friends.getFriends().size();
     }
 
-    public Integer getFollowersCount(Integer userId) throws DaoException
-    {
+    public Integer getFollowersCount(Integer userId) throws DaoException, InterruptedException {
         logger.log(Level.INFO, "Getting all followers of user with id: " + userId + '.');
         UserFriendsRequest followers = friendRequestDao.findAllByReceiverId(userId);
         return followers.getRequests().size();
     }
 
-    public List<Post> getUserPost(Integer userId) throws DaoException
-    {
+    public List<Post> getUserPost(Integer userId) throws DaoException, InterruptedException {
         logger.log(Level.INFO, "Getting all posts of user with id: " + userId + '.');
         return postDao.findAllByUserId(userId);
     }
 
-    public User getUserInfo(Integer userId) throws DaoException
-    {
+    public User getUserInfo(Integer userId) throws DaoException, InterruptedException {
         logger.log(Level.INFO, "Getting user information with id: " + userId + '.');
         return userDao.findById(userId);
     }
 
-    public Status getStatus(Integer userId, Integer unknownId) throws DaoException
-    {
+    public Status getStatus(Integer userId, Integer unknownId) throws DaoException, InterruptedException {
         logger.log(Level.INFO, "Getting guest status of page.");
         if (unknownId == null)
         {
@@ -102,8 +97,7 @@ public class ProfilePageService
         return Status.NO_ONE;
     }
 
-    public void editAbout(Integer userId, String about) throws DaoException
-    {
+    public void editAbout(Integer userId, String about) throws DaoException, InterruptedException {
         logger.log(Level.INFO, "Editing about of user with id: " + userId + '.');
         User user = userDao.findById(userId);
         if (user == null) {

@@ -7,13 +7,13 @@ import java.util.List;
 
 public interface Dao<T>
 {
-    List<T> findAll() throws DaoException;
+    List<T> findAll() throws DaoException, InterruptedException;
 
-    boolean delete(T t) throws DaoException;
+    boolean delete(T t) throws DaoException, InterruptedException;
 
-    boolean create(T t) throws DaoException;
+    boolean create(T t) throws DaoException, InterruptedException;
 
-    T update(T t) throws DaoException;
+    T update(T t) throws DaoException, InterruptedException;
 
     default void close(Statement statement) throws DaoException
     {

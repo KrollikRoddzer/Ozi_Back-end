@@ -43,7 +43,7 @@ public class LoginPageService
             logger.log(Level.INFO, "Successfully logged in.");
             return true;
 
-        } catch (DaoException e) {
+        } catch (DaoException | InterruptedException e) {
             logger.log(Level.ERROR, "Error occurred: " + e.getMessage());
             e.printStackTrace();
         }

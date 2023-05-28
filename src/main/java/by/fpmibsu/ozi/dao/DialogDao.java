@@ -1,6 +1,8 @@
 package by.fpmibsu.ozi.dao;
 
-import by.fpmibsu.ozi.db.ConnectionCreator;
+import java.sql.Connection;
+
+import by.fpmibsu.ozi.db.ConnectionPool;
 import by.fpmibsu.ozi.entity.Dialog;
 import by.fpmibsu.ozi.entity.Message;
 import by.fpmibsu.ozi.entity.User;
@@ -35,7 +37,7 @@ public class DialogDao implements Dao<Dialog>
 
             return true;
         }
-        catch (DaoException e)
+        catch (DaoException | InterruptedException e)
         {
             throw new DaoException(e.getMessage(), e.getCause());
         }
@@ -52,15 +54,20 @@ public class DialogDao implements Dao<Dialog>
 
         for (var item : dialog.getMessages())
         {
-            messageDao.update(item);
+            try {
+                messageDao.update(item);
+            } catch (InterruptedException e) {
+                throw new DaoException(e);
+            }
         }
 
         return dialog;
     }
 
-    public UserDialogs getUserDialogs(User user) throws DaoException
+    public UserDialogs getUserDialogs(User user) throws DaoException, InterruptedException
     {
-        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_ALL_USERS_WITH_WHOM_USER_HAS_DIALOG))
+        Connection connection = ConnectionPool.getConnection();
+        try (PreparedStatement statement = connection.prepareStatement(SQL_SELECT_ALL_USERS_WITH_WHOM_USER_HAS_DIALOG))
         {
             statement.setInt(1, user.getId());
             statement.setInt(2, user.getId());
@@ -82,6 +89,9 @@ public class DialogDao implements Dao<Dialog>
         catch (SQLException e)
         {
             throw new DaoException(e.getMessage(), e.getCause());
+        }
+        finally {
+            ConnectionPool.closeConnection(connection);
         }
     }
 }

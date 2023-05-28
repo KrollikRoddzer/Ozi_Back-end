@@ -1,7 +1,7 @@
 package by.fpmibsu.ozi.dbtest;
 
 import by.fpmibsu.ozi.dao.*;
-import by.fpmibsu.ozi.db.ConnectionCreator;
+import by.fpmibsu.ozi.db.ConnectionPool;
 import by.fpmibsu.ozi.entity.Post;
 import by.fpmibsu.ozi.services.ProfilePageService;
 import by.fpmibsu.ozi.services.Status;
@@ -10,6 +10,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -32,39 +33,44 @@ public class ProfilePageServiceTest
     @Test
     public void initialTest()
     {
-        if (!ConnectionCreator.PROPERTIES.getProperty("db.url").equals("jdbc:mysql://127.0.0.1:3306/ozitest")) throw new RuntimeException();
+        if (!ConnectionPool.PROPERTIES.getProperty("db.url").equals("jdbc:mysql://127.0.0.1:3306/ozitest")) throw new RuntimeException();
+        try {
+            Connection connection = ConnectionPool.getConnection();
+            try {
+                PreparedStatement user = connection.prepareStatement(SQL_SELECT_USER);
+                PreparedStatement friends = connection.prepareStatement(SQL_SELECT_FRIENDS);
+                PreparedStatement messages = connection.prepareStatement(SQL_SELECT_MESSAGES);
+                PreparedStatement posts = connection.prepareStatement(SQL_SELECT_POSTS);
+                PreparedStatement friend_request = connection.prepareStatement(SQL_SELECT_FRIEND_REQUEST);
+                Integer userCount = -1, friendsCount = -1, messagesCount = -1, postsCount = -1, friend_requestCount = -1;
+                ResultSet tmp = user.executeQuery();
+                if (tmp.next()) userCount = tmp.getInt("tmp");
+                tmp = friends.executeQuery();
+                if (tmp.next()) friendsCount = tmp.getInt("tmp");
+                tmp = messages.executeQuery();
+                if (tmp.next()) messagesCount = tmp.getInt("tmp");
+                tmp = posts.executeQuery();
+                if (tmp.next()) postsCount = tmp.getInt("tmp");
+                tmp = friend_request.executeQuery();
+                if (tmp.next()) friend_requestCount = tmp.getInt("tmp");
 
-        try
-        {
-            PreparedStatement user = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_USER);
-            PreparedStatement friends = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_FRIENDS);
-            PreparedStatement messages = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_MESSAGES);
-            PreparedStatement posts = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_POSTS);
-            PreparedStatement friend_request = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_FRIEND_REQUEST);
-            Integer userCount = -1, friendsCount = -1, messagesCount = -1, postsCount = -1, friend_requestCount = -1;
-            ResultSet tmp = user.executeQuery();
-            if (tmp.next()) userCount = tmp.getInt("tmp");
-            tmp = friends.executeQuery();
-            if (tmp.next()) friendsCount = tmp.getInt("tmp");
-            tmp = messages.executeQuery();
-            if (tmp.next()) messagesCount = tmp.getInt("tmp");
-            tmp = posts.executeQuery();
-            if (tmp.next()) postsCount = tmp.getInt("tmp");
-            tmp = friend_request.executeQuery();
-            if (tmp.next()) friend_requestCount = tmp.getInt("tmp");
+                ArrayList<Integer> list = new ArrayList<Integer>();
+                list.add(userCount);
+                list.add(friendsCount);
+                list.add(messagesCount);
+                list.add(postsCount);
+                list.add(friend_requestCount);
 
-            ArrayList<Integer> list = new ArrayList<Integer>();
-            list.add(userCount);
-            list.add(friendsCount);
-            list.add(messagesCount);
-            list.add(postsCount);
-            list.add(friend_requestCount);
+                ArrayList<Integer> mustBe = new ArrayList<>(Arrays.asList(5, 8, 6, 8, 4));
+                Assert.assertEquals(list.toArray(), mustBe.toArray());
 
-            ArrayList<Integer> mustBe = new ArrayList<>(Arrays.asList(5, 8, 6, 8, 4));
-
-            Assert.assertEquals(list.toArray(), mustBe.toArray());
-
-        } catch (SQLException e) {
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            finally {
+                ConnectionPool.closeConnection(connection);
+            }
+        } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
@@ -77,7 +83,7 @@ public class ProfilePageServiceTest
             Assert.assertEquals(ans, service.getFriendsCount(1));
             ans = 1;
             Assert.assertEquals(ans, service.getFriendsCount(2));
-        } catch (DaoException e) {
+        } catch (DaoException | InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
@@ -92,7 +98,7 @@ public class ProfilePageServiceTest
             Assert.assertEquals(ans, service.getFollowersCount(1));
             ans = 1;
             Assert.assertEquals(ans, service.getFriendsCount(3));
-        } catch (DaoException e) {
+        } catch (DaoException | InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
@@ -100,6 +106,7 @@ public class ProfilePageServiceTest
     @Test
     public void getUserPosts()
     {
+
         int ans = 2;
         try {
             Assert.assertEquals(ans, service.getUserPost(1).size());
@@ -109,7 +116,10 @@ public class ProfilePageServiceTest
             Assert.assertEquals(post.getDate(), posts.get(0).getDate());
         } catch (DaoException e) {
             throw new RuntimeException(e);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
+
     }
 
     @Test
@@ -118,7 +128,7 @@ public class ProfilePageServiceTest
         try {
             Assert.assertEquals("+375445918769", service.getUserInfo(1).getPhone());
             Assert.assertNull(service.getUserInfo(12));
-        } catch (DaoException e) {
+        } catch (DaoException | InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
@@ -135,7 +145,7 @@ public class ProfilePageServiceTest
             Assert.assertEquals(Status.REQUEST_SEND, service.getStatus(3, 2));
             Assert.assertEquals(Status.NO_ONE, service.getStatus(1, 6));
             Assert.assertEquals(Status.ERROR, service.getStatus(1, null));
-        } catch (DaoException e) {
+        } catch (DaoException | InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
@@ -146,7 +156,7 @@ public class ProfilePageServiceTest
         try {
             service.editAbout(1, "Hello world!!!");
             Assert.assertEquals("Hello world!!!", service.getUserInfo(1).getAbout());
-        } catch (DaoException e) {
+        } catch (DaoException | InterruptedException e) {
             throw new RuntimeException(e);
         }
 

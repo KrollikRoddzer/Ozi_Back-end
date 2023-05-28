@@ -1,14 +1,10 @@
 package by.fpmibsu.ozi.dao;
 
-import by.fpmibsu.ozi.db.ConnectionCreator;
+import by.fpmibsu.ozi.db.ConnectionPool;
 import by.fpmibsu.ozi.entity.User;
 
 import java.security.NoSuchAlgorithmException;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Date;
-import java.sql.Blob;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,8 +22,9 @@ public class UserDao implements Dao<User>
     public static final String SQL_SELECT_BY_NAME = "SELECT * FROM user WHERE CONCAT(name, ' ', surname) LIKE ?";
 
     @Override
-    public List<User> findAll() throws DaoException {
-        try(PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_ALL_USERS))
+    public List<User> findAll() throws DaoException, InterruptedException {
+        Connection connection = ConnectionPool.getConnection();
+        try(PreparedStatement statement = connection.prepareStatement(SQL_SELECT_ALL_USERS))
         {
             List<User> result = new ArrayList<>();
             ResultSet set = statement.executeQuery();
@@ -55,11 +52,14 @@ public class UserDao implements Dao<User>
         {
             throw new DaoException(e.getMessage(), e.getCause());
         }
+        finally {
+            ConnectionPool.closeConnection(connection);
+        }
     }
 
-    public User findByPhone(String phone) throws DaoException
-    {
-        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_BY_PHONE))
+    public User findByPhone(String phone) throws DaoException, InterruptedException {
+        Connection connection = ConnectionPool.getConnection();
+        try (PreparedStatement statement = connection.prepareStatement(SQL_SELECT_BY_PHONE))
         {
             statement.setString(1, phone);
             ResultSet set = statement.executeQuery();
@@ -89,11 +89,14 @@ public class UserDao implements Dao<User>
         {
             throw new DaoException(e.getMessage(), e.getCause());
         }
+        finally {
+            ConnectionPool.closeConnection(connection);
+        }
     }
 
-    public User findById(Integer id) throws DaoException
-    {
-        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_BY_ID))
+    public User findById(Integer id) throws DaoException, InterruptedException {
+        Connection connection = ConnectionPool.getConnection();
+        try (PreparedStatement statement = connection.prepareStatement(SQL_SELECT_BY_ID))
         {
             statement.setInt(1, id);
             ResultSet set = statement.executeQuery();
@@ -123,11 +126,14 @@ public class UserDao implements Dao<User>
         {
             throw new DaoException(e.getMessage(), e.getCause());
         }
+        finally {
+            ConnectionPool.closeConnection(connection);
+        }
     }
 
-    public User findByEmail(String email) throws DaoException
-    {
-        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_BY_EMAIL))
+    public User findByEmail(String email) throws DaoException, InterruptedException {
+        Connection connection = ConnectionPool.getConnection();
+        try (PreparedStatement statement = connection.prepareStatement(SQL_SELECT_BY_EMAIL))
         {
             statement.setString(1, email);
             ResultSet set = statement.executeQuery();
@@ -157,10 +163,14 @@ public class UserDao implements Dao<User>
         {
             throw new DaoException(e.getMessage(), e.getCause());
         }
+        finally {
+            ConnectionPool.closeConnection(connection);
+        }
     }
     @Override
-    public boolean delete(User user) throws DaoException {
-        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_DELETE_BY_USER))
+    public boolean delete(User user) throws DaoException, InterruptedException {
+        Connection connection = ConnectionPool.getConnection();
+        try (PreparedStatement statement = connection.prepareStatement(SQL_DELETE_BY_USER))
         {
             statement.setInt(1, user.getId());
             int count = statement.executeUpdate();
@@ -170,11 +180,15 @@ public class UserDao implements Dao<User>
         {
             throw new DaoException(e.getMessage(), e.getCause());
         }
+        finally {
+            ConnectionPool.closeConnection(connection);
+        }
     }
 
     @Override
-    public boolean create(User user) throws DaoException {
-        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_CREATE_USER))
+    public boolean create(User user) throws DaoException, InterruptedException {
+        Connection connection = ConnectionPool.getConnection();
+        try (PreparedStatement statement = connection.prepareStatement(SQL_CREATE_USER))
         {
             statement.setString(1, user.getPhone());
             statement.setString(2, user.getEmail());
@@ -194,11 +208,15 @@ public class UserDao implements Dao<User>
         {
             throw new DaoException(e.getMessage(), e.getCause());
         }
+        finally {
+            ConnectionPool.closeConnection(connection);
+        }
     }
 
     @Override
-    public User update(User user) throws DaoException {
-        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_UPDATE_USER))
+    public User update(User user) throws DaoException, InterruptedException {
+        Connection connection = ConnectionPool.getConnection();
+        try (PreparedStatement statement = connection.prepareStatement(SQL_UPDATE_USER))
         {
             statement.setInt(12, user.getId());
             statement.setString(1, user.getPhone());
@@ -222,12 +240,15 @@ public class UserDao implements Dao<User>
         {
             throw new DaoException(e.getMessage(), e.getCause());
         }
+        finally {
+            ConnectionPool.closeConnection(connection);
+        }
     }
 
-    public List<User> findByName(String name1) throws DaoException
-    {
+    public List<User> findByName(String name1) throws DaoException, InterruptedException {
         name1 = '%' + name1 + '%';
-        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_SELECT_BY_NAME))
+        Connection connection = ConnectionPool.getConnection();
+        try (PreparedStatement statement = connection.prepareStatement(SQL_SELECT_BY_NAME))
         {
             statement.setString(1, name1);
             List<User> result = new ArrayList<>();
@@ -255,6 +276,9 @@ public class UserDao implements Dao<User>
         catch (SQLException e)
         {
             throw new DaoException(e.getMessage(), e.getCause());
+        }
+        finally {
+            ConnectionPool.closeConnection(connection);
         }
     }
 }

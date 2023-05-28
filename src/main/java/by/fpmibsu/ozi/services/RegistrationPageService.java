@@ -31,7 +31,7 @@ public class RegistrationPageService
             logger.log(Level.INFO, "User: " + userDao.findByPhone(user.getPhone()).toString() + " registered.");
             return userDao.findByPhone(user.getPhone());
         }
-        catch (DaoException e)
+        catch (DaoException | InterruptedException e)
         {
             logger.log(Level.ERROR, "Unable to create user because " + e.getMessage());
             System.out.println(e.getMessage());

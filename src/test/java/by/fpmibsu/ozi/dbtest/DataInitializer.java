@@ -1,9 +1,10 @@
 package by.fpmibsu.ozi.dbtest;
 
-import by.fpmibsu.ozi.db.ConnectionCreator;
+import by.fpmibsu.ozi.db.ConnectionPool;
 import by.fpmibsu.ozi.entity.User;
 
 import java.security.NoSuchAlgorithmException;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -48,25 +49,31 @@ public class DataInitializer
             "(6, '2022-01-01', 'My name is LOL!', 4, 5);\n";
     public DataInitializer()
     {
-        if (!ConnectionCreator.PROPERTIES.getProperty("db.url").equals("jdbc:mysql://127.0.0.1:3306/ozitest")) throw new RuntimeException();
-        try (PreparedStatement statement = ConnectionCreator.createConnection().prepareStatement(SQL_CREATION))
-        {
-            for (int i = 1; i < 6; ++i)
-            {
-                statement.setString(i, User.makeHash("qwerty123"));
+        if (!ConnectionPool.PROPERTIES.getProperty("db.url").equals("jdbc:mysql://127.0.0.1:3306/ozitest")) throw new RuntimeException();
+        try {
+            Connection connection = ConnectionPool.getConnection();
+            try (PreparedStatement statement = connection.prepareStatement(SQL_CREATION)) {
+                for (int i = 1; i < 6; ++i) {
+                    statement.setString(i, User.makeHash("qwerty123"));
+                }
+                statement.executeUpdate();
+
+                Statement statement1 = connection.createStatement();
+                statement1.execute(SQL_CREATION2);
+                statement1.execute(SQL_CREATION3);
+                statement1.execute(SQL_CREATION4);
+                statement1.execute(SQL_CREATION5);
+
+                statement1.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (NoSuchAlgorithmException e) {
+                throw new RuntimeException(e);
             }
-            statement.executeUpdate();
-
-            Statement statement1 = ConnectionCreator.createConnection().createStatement();
-            statement1.execute(SQL_CREATION2);
-            statement1.execute(SQL_CREATION3);
-            statement1.execute(SQL_CREATION4);
-            statement1.execute(SQL_CREATION5);
-
-            statement1.close();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (NoSuchAlgorithmException e) {
+            finally {
+                ConnectionPool.closeConnection(connection);
+            }
+        } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
     }

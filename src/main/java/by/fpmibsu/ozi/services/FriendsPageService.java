@@ -21,8 +21,7 @@ public class FriendsPageService
         this.friendDao = friendDao;
     }
 
-    public List<User> getAllFriends(Integer userId) throws DaoException
-    {
+    public List<User> getAllFriends(Integer userId) throws DaoException, InterruptedException {
         logger.log(Level.INFO, "Getting all friends of user with id " + userId + '.');
         return friendDao.findFriendsByUserId(userId).getFriends();
     }

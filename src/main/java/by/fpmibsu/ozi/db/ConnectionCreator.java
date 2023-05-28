@@ -7,7 +7,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-public class ConnectionCreator
+class ConnectionCreator
 {
     public static final Properties PROPERTIES = new Properties();
     private static final String DATABASE_URL;
