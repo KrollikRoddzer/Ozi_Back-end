@@ -2,6 +2,7 @@ package by.fpmibsu.ozi.dao;
 
 import by.fpmibsu.ozi.db.ConnectionPool;
 import by.fpmibsu.ozi.entity.Friend;
+import by.fpmibsu.ozi.entity.FriendRequest;
 import by.fpmibsu.ozi.entity.User;
 import by.fpmibsu.ozi.entity.UserFriends;
 
@@ -38,12 +39,13 @@ public class FriendDao implements Dao<Friend>
         try (PreparedStatement statement = connection.prepareStatement(SQL_DELETE_FRIEND))
         {
             int user_id = friend.getPerson().getId();
-            int friend_id = friend.getFriend().getId();
+            int friend_id = friend.getFriend(). getId();
             statement.setInt(1, user_id);
             statement.setInt(2, friend_id);
             statement.setInt(3, friend_id);
             statement.setInt(4,user_id);
-
+            FriendRequestDao friendRequestDao = new FriendRequestDao();
+            friendRequestDao.create(new FriendRequest(friend.getPerson(), friend.getFriend(), new Date(new java.util.Date().getTime())));
             return statement.executeUpdate() > 0;
 
         } catch (SQLException e) {
@@ -69,7 +71,10 @@ public class FriendDao implements Dao<Friend>
             statement.setInt(5, user_id);
             statement.setInt(4, frined_id);
             statement.setDate(6, date);
+            FriendRequestDao friendRequestDao = new FriendRequestDao();
 
+            UserDao userDao = new UserDao();
+            friendRequestDao.delete(new FriendRequest(friend.getPerson(), friend.getFriend(), new Date(new java.util.Date().getTime())));
             return statement.executeUpdate() > 0;
         }
         catch (SQLException e)

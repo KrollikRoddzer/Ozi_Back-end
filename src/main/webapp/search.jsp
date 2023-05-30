@@ -6,8 +6,8 @@
   <title>Search</title>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="icon" type="image/svg+xml" href="./img/svg/Ozi_icon.svg">
-  <link rel="icon" type="image/png" href="./img/favicon/Ozi__iconPNG.png">
+  <link rel="icon" type="image/svg+xml" href="${pageContext.request.contextPath}/img/svg/Ozi_icon.svg">
+  <link rel="icon" type="image/png" href="${pageContext.request.contextPath}/favicon/Ozi__iconPNG.png">
   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="css/temp.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">

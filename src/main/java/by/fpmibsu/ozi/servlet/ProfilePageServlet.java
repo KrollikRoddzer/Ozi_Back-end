@@ -23,17 +23,27 @@ public class ProfilePageServlet extends HttpServlet
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         Integer userId = (Integer) session.getAttribute("userId");
-        Integer pageId = (Integer) req.getAttribute("pageId");
-        if (userId == null)
+        Integer pageId;
+        try {
+            String str = req.getParameter("pageId");
+            if (str == null)
+            {
+                pageId = null;
+            }
+            else pageId = Integer.parseInt(str);
+        }
+        catch (NumberFormatException e)
         {
-            resp.sendRedirect("/ozi/login");
-            return;
+            pageId = null;
         }
         try {
-            Status status = service.getStatus(userId, pageId);
-            User user = service.getUserInfo(userId);
-            Integer followersCount = service.getFollowersCount(userId);
-            Integer friendsCount = service.getFriendsCount(userId);
+            Status status = service.getStatus(pageId, userId);
+            User user;
+            if (status == Status.ME) user = service.getUserInfo(userId);
+            else user = service.getUserInfo(pageId);
+
+            Integer followersCount = service.getFollowersCount(user.getId());
+            Integer friendsCount = service.getFriendsCount(user.getId());
 
             req.setAttribute("name", user.getName());
 
@@ -49,11 +59,13 @@ public class ProfilePageServlet extends HttpServlet
             req.setAttribute("friends", friendsCount.toString());
             req.setAttribute("followers", followersCount.toString());
             req.setAttribute("city", user.getCity());
-
-            req.getRequestDispatcher("/index.jsp").forward(req, resp);
-        } catch (DaoException e) {
-            throw new RuntimeException(e);
-        } catch (InterruptedException | ParseException e) {
+            req.setAttribute("about", user.getAbout());
+            req.setAttribute("status", status.toString());
+            if (status == Status.ME)
+                req.getRequestDispatcher("/index.jsp").forward(req, resp);
+            else
+                req.getRequestDispatcher("/another.jsp").forward(req, resp);
+        } catch (DaoException | InterruptedException | ParseException e) {
             throw new RuntimeException(e);
         }
     }
@@ -66,5 +78,37 @@ public class ProfilePageServlet extends HttpServlet
             req.getSession().invalidate();
             resp.sendRedirect("/ozi/login");
         }
+        else if (req.getParameter("friend") != null)
+        {
+            if (req.getParameter("pageId") != null)
+            {
+                //String id = req.getParameter("pageId");
+                resp.sendRedirect("/ozi/friends?id=" + req.getParameter("pageId"));
+            }
+            else if (req.getSession().getAttribute("userId") != null)
+            {
+                //String id = req.getParameter("pageId");
+                resp.sendRedirect("/ozi/friends?id=" + req.getSession().getAttribute("userId"));
+            }
+        }
+        else if (req.getParameter("follower") != null)
+        {
+            if (req.getParameter("pageId") != null)
+            {
+                //String id = req.getParameter("pageId");
+                resp.sendRedirect("/ozi/followers?id=" + req.getParameter("pageId"));
+            }
+            else if (req.getSession().getAttribute("userId") != null)
+            {
+                //String id = req.getParameter("pageId");
+                resp.sendRedirect("/ozi/followers?id=" + req.getSession().getAttribute("userId"));
+            }
+        }
+
+    }
+
+    void postHelpMethod(HttpServletRequest req, HttpServletResponse resp)
+    {
+
     }
 }

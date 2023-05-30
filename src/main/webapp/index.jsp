@@ -1,4 +1,8 @@
-<%--
+<%@ page import="by.fpmibsu.ozi.entity.Post" %>
+<%@ page import="java.util.List" %>
+<%@ page import="by.fpmibsu.ozi.dao.PostDao" %>
+<%@ page import="java.util.Collections" %>
+<%@ page import="java.util.Comparator" %><%--
   Created by IntelliJ IDEA.
   User: User
   Date: 23.05.2023
@@ -43,7 +47,8 @@
             <div class="profile">
                 <div class="profile__item">
                     <div class="profile__pic">
-                        <img class="profile__photo" alt="profile picture" src="${pageContext.request.contextPath}/img/Dva.jpg" width="350" height="350">
+                        <img class="profile__photo" alt="profile picture"
+                             src="${pageContext.request.contextPath}/img/Ozi.png" width="350" height="350">
                     </div>
                 </div>
                 <div class="profile__item">
@@ -52,17 +57,71 @@
                             <div class="panel">
                                 <div class="user__panel">
                                     <p class="user__name">${name} ${surname}</p>
-                                    <p class="user__status">I love Ozi</p>
+                                    <p class="user__status">${about}</p>
                                 </div>
                                 <div class="settings">
                                     <div class="settings__pic">
-                                        <a href="http://localhost:8080/ozi_war_exploded/editabout.jsp">
+                                        <a id="change-status-button" >
                                             <img src="${pageContext.request.contextPath}/img/svg/settings.svg">
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div id="change-status-dialog">
+                            <div id="change-status-dialog-content">
+                                <div class="profile__about">
+
+                                    <div class="panel__items">
+                                       
+                                        <div class="panel__item">
+
+                                            <div class="panel__about">
+                                                <form method="post" action="/ozi/editabout">
+                                                <span class="close" onclick="closeDialog()">&times;</span>
+                                                <div class="edit__info">
+                                                    <h1 class="edit__title">Edit your status!</h1>
+                                                    <p class="edit__p">
+                                                        You can change information about your feelings
+                                                    </p>
+                                                   </div>
+                                                <div class="edit">
+                                                    <textarea name="about" class="about_in element" id="status-input"
+                                                              placeholder="${about}"></textarea>
+                                                    <div class="buttoms">
+                                                        <button type="submit" class="edit__but save">Save</button>
+                                                        <button type="button" class="edit__but"
+                                                                onclick="closeDialog()">Cancel </button>
+                                                    </div>
+                                                </div>
+                                                <div class="statistics__about">
+                                                    <!-- statistics part -->
+                                                    <jsp:include page="components/statistics.jsp"/>
+                                                </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                </div>
+
+                            </div>
+                          </div>
+                          <script>
+                            function openDialog() {
+                              var dialog = document.querySelector('#change-status-dialog');
+                              dialog.style.display = "block";
+                            }
+
+                            function closeDialog() {
+                              var dialog = document.querySelector('#change-status-dialog');
+                              dialog.style.display = "none";
+                            }
+                            </script>
+                            <script>
+                                var changeStatusButton = document.querySelector('#change-status-button');
+                                changeStatusButton.addEventListener('click', openDialog);
+                                </script>
 
                         <div class="panel__item">
                             <div class="panel bottom">
@@ -109,81 +168,9 @@
                                     </div>
                                 </div>
                                 <div class="statistics">
-                                    <div class="user__info-row">
-                                        <div class="user__item">
-                                            <div class="user__info-row-container">
-                                                <div class="user__info-row-in">
-                                                    <div class="user__info-row-friends">
-                                                            <span class="user__info-row-value">
-                                                                <a href="#" class="user__link-info js-search">${friends}</a>
-                                                            </span>
-                                                    </div>
-                                                </div>
-                                                <div class="user__info-row-lable">
-                                                    Friends
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="user__item">
-                                            <div class="user__info-row-container">
-                                                <div class="user__info-row-in">
-                                                    <div class="user__info-row-followers">
-                                                            <span class="user__info-row-value">
-                                                                <a href="#" class="user__link-info js-search">${followers}</a>
-                                                            </span>
-                                                    </div>
-                                                </div>
-                                                <div class="user__info-row-lable">
-                                                    followers
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="user__item">
-                                            <div class="user__info-row-container">
-                                                <div class="user__info-row-in">
-                                                    <div class="user__info-row-Communities">
-                                                            <span class="user__info-row-value">
-                                                                <a href="#" class="user__link-info js-search">30</a>
-                                                            </span>
-                                                    </div>
-                                                </div>
-                                                <div class="user__info-row-lable">
-                                                    Communities
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="user__item">
-                                            <div class="user__info-row-container">
-                                                <div class="user__info-row-in">
-                                                    <div class="user__info-row-photos">
-                                                            <span class="user__info-row-value">
-                                                                <a href="#" class="user__link-info js-search">3</a>
-                                                            </span>
-                                                    </div>
-                                                </div>
-                                                <div class="user__info-row-lable">
-                                                    photos
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="user__item">
-                                            <div class="user__info-row-container">
-                                                <div class="user__info-row-in">
-                                                    <div class="user__info-row-music">
-                                                            <span class="user__info-row-value">
-                                                                <a href="#" class="user__link-info js-search">98</a>
-                                                            </span>
-                                                    </div>
-                                                </div>
-                                                <div class="user__info-row-lable">
-                                                    music
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
+                                <!-- statistics part -->
+                                <jsp:include page="components/statistics.jsp"/>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -205,73 +192,61 @@
                                 <p>all notes:</p>
                             </div>
                         </div>
-                        <div class="tools">
+                        <form class="tools" method="post" action="/ozi/post">
                             <div class="text-field">
                                 <div class="text-field__icon">
-                                    <input class="text-field__input" type="text" placeholder="Share the news">
+                                    <textarea class="text-field__input element" id="post_in" name="post_in" type="text" placeholder="Share the news"></textarea>
                                     <div class="icons__place">
-                                        <span class="text-field__aicon">
-                                            <i class='bx bx-bookmark-plus'></i>
-                                          </span>
-                                        <span class="text-field__aicon-smile">
-                                            <i class='bx bx-smile' ></i>
-                                          </span>
+                                        <button class="post__button">
+                                            create
+                                        </button>
                                     </div>
 
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
+                    <%
+                        Integer userId = (Integer) session.getAttribute("userId");
+                        PostDao postDao = new PostDao();
+                        List<Post> posts = postDao.findAllByUserId(userId);
+                        Collections.sort(posts, Comparator.comparing(Post::getDate).reversed());
+
+                    %>
                     <div class="post__panel">
                         <div class="post__container">
+                            <% for (Post post : posts) { %>
                             <div class="post">
                                 <div class="time__place">
-                                    <div class="post__time date">Today</div>
+                                    <div class="post__time date">
+                                        <% session.setAttribute("date",post.getDate()); %>
+                                        ${date}
+                                    </div>
                                 </div>
 
                                 <div class="post__card">
                                     <div class="post__info">
                                         <div class="post__pic">
-                                            <img class="post__picture" src="img/Dva.jpg" width="65" height="65">
+                                            <img class="post__picture" src="img/Ozi.png" width="65" height="65">
                                         </div>
                                         <div class="post__plot">
                                             <div class="name__time">
-                                                <div class="post__name">Anastasia Krech</div>
-                                                <div class="post__time">12:05</div>
+                                                <div class="post__name">
+                                                    <% session.setAttribute("user",post.getUser().getName() +
+                                                            " " + post.getUser().getSurname() ); %>
+                                                    ${user}
+                                                </div>
                                             </div>
                                             <div class="post__text">
-                                                Who hasn't had photos for a long time?
+                                                <% session.setAttribute("text",post.getText()); %>
+                                                ${text}
                                             </div>
                                         </div>
 
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="post">
-                                <div class="time__place">
-                                    <div class="post__time date">Monday, february 15nd</div>
-                                </div>
-
-                                <div class="post__card">
-                                    <div class="post__info">
-                                        <div class="post__pic">
-                                            <img class="post__picture" src="img/Dva.jpg" width="65" height="65">
-                                        </div>
-                                        <div class="post__plot">
-                                            <div class="name__time">
-                                                <div class="post__name">Anastasia Krech</div>
-                                                <div class="post__time">12:05</div>
-                                            </div>
-                                            <div class="post__text">
-                                                Who hasn't had photos for a long time?
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
+                           <% } %>
                         </div>
                     </div>
 

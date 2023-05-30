@@ -52,7 +52,7 @@
 
                                 <div class="input__item">
                                     <div class="form__group">
-                                        <input type="text" id="name" name="name" class="form__input" placeholder=" ">
+                                        <input type="text" id="name" name="name" class="form__input" placeholder=" " required>
                                         <label class="form__label">Name</label>
                                         <i class='bx bx-check-circle fas fa-check-circle' style='color:#64ed9d' ></i>
                                         <i class='bx bx-error-circle fas fa-exclamation-circle' style='color:#b098ee' ></i>
@@ -60,7 +60,7 @@
                                     </div>
 
                                     <div class="form__group">
-                                        <input type="text" id="surname" name="surname" class="form__input" placeholder=" ">
+                                        <input type="text" id="surname" name="surname" class="form__input" placeholder=" " required>
                                         <label class="form__label">Surname</label>
                                         <i class='bx bx-check-circle fas fa-check-circle' style='color:#64ed9d' ></i>
                                         <i class='bx bx-error-circle fas fa-exclamation-circle' style='color:#b098ee' ></i>
@@ -79,7 +79,7 @@
                                         <div class="radio__group">
                                             <div class="form__radio_group">
                                                 <label class="radio__lable">
-                                                    <input type="radio" id="male" value="mёёёё" name="sex">
+                                                    <input type="radio" id="male" value="m" name="sex">
                                                     male
                                                     <span></span>
                                                 </label>
@@ -108,7 +108,7 @@
                             <div class="date__place">
                                 <div class="date__title">Date of birth</div>
                                 <input  class="form__input date__input" type="date" name="birthday" max="2023"
-                                        id="dateOfBirth" >
+                                        id="dateOfBirth" required>
                             </div>
                             <div class="check__date">
                                 <label class="custom-checkbox">
@@ -123,7 +123,7 @@
                         <div class="password__section">
                             <div class="input__item inline__in">
                                 <div class="form__group new__margin">
-                                    <input type="tel" id="phone" name="phone" class="form__input inline__input" placeholder=" ">
+                                    <input type="tel" id="phone" name="phone" class="form__input inline__input" placeholder=" " required>
                                     <label class="form__label">Phone</label>
                                     <i class='bx bx-check-circle fas fa-check-circle' style='color:#64ed9d' ></i>
                                     <i class='bx bx-error-circle fas fa-exclamation-circle' style='color:#b098ee' ></i>
@@ -131,7 +131,7 @@
                                 </div>
 
                                 <div class="form__group new__margin">
-                                    <input class="form__input inline__input " name="password" type="password" id="password" placeholder=" ">
+                                    <input class="form__input inline__input " name="password" type="password" id="password" placeholder=" " required>
                                     <label class="form__label">Password</label>
                                     <i class='bx bx-check-circle fas fa-check-circle' style='color:#64ed9d' ></i>
                                     <i class='bx bx-error-circle fas fa-exclamation-circle' style='color:#b098ee' ></i>
@@ -141,7 +141,7 @@
                                 </div>
 
                                 <div class="form__group new__margin">
-                                    <input class="form__input inline__input password__input" id="password2" type="password" placeholder=" ">
+                                    <input class="form__input inline__input password__input" id="password2" type="password" placeholder=" " required>
                                     <label class="form__label"> Repeat the password</label>
                                     <i class='bx bx-check-circle fas fa-check-circle' style='color:#64ed9d' ></i>
                                     <i class='bx bx-error-circle fas fa-exclamation-circle' style='color:#b098ee' ></i>
@@ -154,7 +154,7 @@
                                     </div>
                                 </div>
                                 <div class="form__group new__margin">
-                                    <input type="email" id="email" name="email" class="form__input inline__input" placeholder=" ">
+                                    <input type="email" id="email" name="email" class="form__input inline__input" placeholder=" " required>
                                     <label class="form__label">Email</label>
                                     <i class='bx bx-check-circle fas fa-check-circle' style='color:#64ed9d' ></i>
                                     <i class='bx bx-error-circle fas fa-exclamation-circle' style='color:#b098ee' ></i>

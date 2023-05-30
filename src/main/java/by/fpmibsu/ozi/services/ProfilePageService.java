@@ -7,6 +7,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.swing.*;
+import java.sql.Date;
 import java.util.List;
 
 public class ProfilePageService
@@ -50,15 +51,14 @@ public class ProfilePageService
 
     public Status getStatus(Integer userId, Integer unknownId) throws DaoException, InterruptedException {
         logger.log(Level.INFO, "Getting guest status of page.");
-        if (unknownId == null)
-        {
-            logger.log(Level.ERROR, "Page user id is null!");
-            return Status.ERROR;
-        }
         if (userId == null)
         {
-            logger.log(Level.INFO, "Guest is not registered.");
-            return Status.NOT_REGISTERED;
+            logger.log(Level.ERROR, "Page user id is null!");
+            return Status.ME;
+        }
+        if (userDao.findById(unknownId) == null)
+        {
+            return Status.ME;
         }
         if (userId.equals(unknownId))
         {
@@ -107,5 +107,35 @@ public class ProfilePageService
         user.setAbout(about);
         userDao.update(user);
         logger.log(Level.INFO, "About of user with id " + user + " is edited.");
+    }
+
+    public boolean createPost(Integer userId, String text, java.util.Date date) throws DaoException, InterruptedException {
+        User user = userDao.findById(userId);
+        if (user == null) throw new DaoException();
+        java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+        Post post = new Post(
+                0,
+                user,
+                text,
+                (java.sql.Date) sqlDate
+        );
+        return postDao.create(post);
+    }
+
+    public boolean acceptRequest(Integer user_id, Integer friend_id) throws DaoException, InterruptedException {
+
+        return friendDao.create(new Friend(userDao.findById(user_id), userDao.findById(friend_id), new Date(new java.util.Date().getTime())));
+    }
+
+    public boolean sendRequest(Integer sender_id, Integer receiver_id) throws DaoException, InterruptedException {
+        return friendRequestDao.create(new FriendRequest(userDao.findById(receiver_id), userDao.findById(sender_id), new Date(new java.util.Date().getTime())));
+    }
+
+    public boolean deleteFriend(Integer user_id, Integer friend_id) throws DaoException, InterruptedException {
+        return friendDao.delete(new Friend(userDao.findById(user_id), userDao.findById(friend_id), new Date(new java.util.Date().getTime())));
+    }
+
+    public boolean unsendRequest(Integer sender_id, Integer receiver_id) throws DaoException, InterruptedException {
+        return friendRequestDao.delete(new FriendRequest(userDao.findById(receiver_id), userDao.findById(sender_id), new Date(new java.util.Date().getTime())));
     }
 }

@@ -3,6 +3,7 @@ package by.fpmibsu.ozi;
 import by.fpmibsu.ozi.dao.*;
 import by.fpmibsu.ozi.entity.User;
 import by.fpmibsu.ozi.services.RegistrationPageService;
+import by.fpmibsu.ozi.services.Status;
 
 import java.sql.Date;
 
@@ -10,7 +11,7 @@ import java.sql.Date;
 public class OziApplication {
 
 	public static void main(String[] args) {
-		ShowMessages();
+		//ShowMessages();
 	}
 
 	public static void ShowMessages()

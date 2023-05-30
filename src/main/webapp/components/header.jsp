@@ -14,7 +14,7 @@
 
             <div class="header__item">
                 <div class="header__logo">
-                    <a href="http://localhost:8080/ozi_war_exploded/ozi" class="headre__logo-link">
+                    <a href="http://localhost:8080/ozi" class="headre__logo-link">
                         <img src="${pageContext.request.contextPath}/img/Ozi_logo.png" width="80" height="80" alt="Welcome to Ozi!">
                     </a>
                 </div>
