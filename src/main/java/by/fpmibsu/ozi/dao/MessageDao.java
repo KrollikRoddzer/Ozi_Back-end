@@ -23,7 +23,7 @@ public class MessageDao implements Dao<Message>
     public static final String SQL_CREATE_MESSAGE = "INSERT INTO messages(receiver_id, sender_id, message, date) " +
             "VALUES(?, ?, ?, ?)";
 
-    public static final String SQL_SELECT_BY_RECEIVER_AND_SENDER = "SELECT * FROM messages WHERE (receiver_id = ? AND sender_id = ?) OR (receiver_id = ? AND sender_id = ?) ORDER BY date;";
+    public static final String SQL_SELECT_BY_RECEIVER_AND_SENDER = "SELECT * FROM messages WHERE (receiver_id = ? AND sender_id = ?) OR (receiver_id = ? AND sender_id = ?) ORDER BY date DESC, id DESC;";
 
     @Override
     public List<Message> findAll() throws DaoException, InterruptedException {

@@ -107,9 +107,19 @@
                         <div class="message__bg">
                             <div class="info__part">
                                 <div class="name__part">
-                                    <% session.setAttribute("activeButton", request.getParameter("active"));
-                                    User user = new UserDao().findById(Integer.parseInt(request.getParameter("active")));
-                                    session.setAttribute("DialogName", user.getName() + " " + user.getSurname());
+                                    <%
+                                        session.setAttribute("activeButton", request.getParameter("active"));
+                                        User user;
+                                        if (session.getAttribute("activeButton") == null || session.getAttribute("activeButton").equals(""))
+                                        {
+                                            user = null;
+                                        }
+                                        else
+                                            user = new UserDao().findById(Integer.parseInt(request.getParameter("active")));
+                                        if (user != null)
+                                            session.setAttribute("DialogName", user.getName() + " " + user.getSurname());
+                                        else
+                                            session.setAttribute("DialogName", "");
                                     %>
                                 </div>
                                 <div class="time__part">
