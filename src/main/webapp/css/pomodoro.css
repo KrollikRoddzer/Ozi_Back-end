@@ -22,6 +22,7 @@ body{
     padding: 10px;
     background: rgba(255, 255, 255, 0.55);
     border-radius: 12px;
+    margin-bottom: 30px;
 }
 
 .timer{
@@ -286,4 +287,133 @@ color: #DD7979;
 }
 body.dark .switch::before{
     left: 24px;
+}
+
+/* task list part */
+/*-----------------------------------------------------------------------------------------------------------------------*/
+.task_bar_background{
+    position: relative;
+    margin:  auto;
+    width: 432px;
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 12px 12px 0px 0px;
+    overflow-y:auto;
+}
+.scroll::-webkit-scrollbar {
+    width: 10px;
+    background-color:#FFD287;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color:#DD7979;
+}
+
+.scroll::-webkit-scrollbar-track {
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2); */
+    border-radius: 10px;
+    background-color:rgb(255, 255, 255);
+}
+
+.task_text{
+    position: relative;
+    top: 2%;
+    width: 147.56px;
+    height: 23.9px;
+    margin: auto;
+    margin-left: 44%;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 1px;
+
+    /* left: 566.22px;
+    top: 415.67px; */
+
+    color: #DD7979;
+
+}
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+#newtask{
+    position: relative;
+    padding: 5%;
+    margin: 0%;
+    display: flex;
+    align-items: center;
+}
+#newtask input[type=text]{
+    width: 340px;
+    height: 18.76px;
+    margin-top: 0%;
+    padding-top: 0%;
+    padding: 12px;
+    color: #dd7979;
+    font-weight: 500;
+    position: relative;
+    border-radius: 5px;
+    font-family: 'Inter';
+    font-size: 15px;
+    border: 2px solid #DD7979;
+}
+#newtask input[type=image] {
+    margin: auto;
+    height: 30px;
+    width: 30px;
+    position: relative;
+}
+#newtask input:focus{
+    outline: none;
+    border-color: rgba(221, 121, 121, 0.25);;
+}
+
+
+#tasks{
+    width: 100%;
+    position: relative;
+    padding: 5px 20px;
+    overflow-y: auto;
+}
+
+.task{
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(221, 121, 121, 0.25);
+    border-radius: 5px;
+    cursor: pointer;
+    height: 30px;
+    margin-bottom: 8px;
+    padding: 5px 10px;
+    display: flex;
+    scrollbar-track-color: #b96666;
+
+}
+.task span{
+    font-family: 'Inter';
+
+    font-size: 15px;
+    font-weight: 400;
+    color:#b96666
+
+}
+.task input[type = image]{
+    border: none;
+    cursor: pointer;
+    outline: none;
+    height: 25px;
+    width: 25px;
+    border-radius: 5px;
+}
+#tasks{
+    max-height: 125px;
 }

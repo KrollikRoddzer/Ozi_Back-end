@@ -14,18 +14,22 @@
 
             <div class="header__item">
                 <div class="header__logo">
-                    <a href="http://localhost:8080/ozi" class="headre__logo-link">
+                    <a href="/ozi" class="headre__logo-link">
                         <img src="${pageContext.request.contextPath}/img/Ozi_logo.png" width="80" height="80" alt="Welcome to Ozi!">
                     </a>
                 </div>
             </div>
             <div class="header__item">
+                <form method="get" action="/ozi/find">
                 <div class="search-box">
-                    <input type="text" name="" class="search-txt" placeholder="Type to search"/>
-                    <a class="search-btn" href="#">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </a>
+
+                        <input type="text" name="search" id="search" class="search-txt"
+                               placeholder="Type to search"/>
+                        <button class="search-btn" >
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
                 </div>
+                </form>
             </div>
             <div class="header__item">
                 <form method="post">

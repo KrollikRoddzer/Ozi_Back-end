@@ -26,7 +26,7 @@
         <!-- подключение общего CSS-файла -->
         <link rel="stylesheet" href="./css/temp.css">
     </head>
-    <body>
+    <body class="element">
         <!-- header start -->
         <div >
             <jsp:include page="./components/header.jsp"/>

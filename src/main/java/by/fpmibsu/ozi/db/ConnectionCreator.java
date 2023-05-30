@@ -20,6 +20,7 @@ class ConnectionCreator
             PROPERTIES.setProperty("db.url", "jdbc:mysql://127.0.0.1:3306/ozi");
             PROPERTIES.setProperty("password", "Stasyan04");
             PROPERTIES.setProperty("user", "root");
+            PROPERTIES.setProperty("encoding",  "UTF-8");
             PROPERTIES.setProperty("db.driver", "com.mysql.cj.jdbc.Driver");
             String driverName = (String) PROPERTIES.get("db.driver");
             Class.forName(driverName);

@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,400;0,700;1,400&family=Inter&family=Lato:ital,wght@0,300;0,400;1,300&family=Red+Hat+Text:wght@500&display=swap" rel="stylesheet">
 
 </head>
-    <body>
+    <body class="element">
         <!-- header start -->
         <div class="header">
             <jsp:include page="./components/login_header.jsp" />

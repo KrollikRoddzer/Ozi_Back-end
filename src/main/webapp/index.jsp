@@ -27,7 +27,7 @@
     <!-- подключение общего CSS-файла -->
     <link rel="stylesheet" href="./css/temp.css">
 </head>
-<body>
+<body class="element">
 <!-- вставка общего хедера из header.jsp -->
 <div>
     <!-- подключение файла header.jsp -->
@@ -41,7 +41,7 @@
         <jsp:include page="./components/navbar.jsp" />
     </nav>
 
-    <section class="intro">
+    <section class="intro__home">
         <!-- profile start -->
         <div class="profile__wrap">
             <div class="profile">
@@ -73,7 +73,7 @@
                                 <div class="profile__about">
 
                                     <div class="panel__items">
-                                       
+
                                         <div class="panel__item">
 
                                             <div class="panel__about">
@@ -102,7 +102,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                
+
                                 </div>
 
                             </div>

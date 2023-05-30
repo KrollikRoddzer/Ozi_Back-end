@@ -9,7 +9,7 @@ import java.io.IOException;
 
 import static java.util.Objects.nonNull;
 
-@WebFilter({"/ozi", "/", "/ozi/post", "/ozi/editabout", "/ozi/friends", "/ozi/editFriends"})
+@WebFilter({"/ozi", "/", "/ozi/post", "/ozi/editabout", "/ozi/friends", "/ozi/editFriends", "/ozi/find"})
 public class AuthFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) {

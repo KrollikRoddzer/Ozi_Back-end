@@ -15,31 +15,31 @@
                 <div class="menu">
                     <ul class="menu-links">
                         <li class="nav-link">
-                            <a href="http://localhost:8080/ozi_war_exploded/ozi">
+                            <a href="/ozi">
                                 <i class='bx bx-home icon'></i>
                                 <span class="text nav-text">Home page</span>
                             </a>
                         </li>
                         <li class="nav-link">
-                            <a href="http://localhost:8080/ozi_war_exploded/index.jsp">
+                            <a href="/index.jsp">
                                 <i class='bx bx-news icon' ></i>
                                 <span class="text nav-text">News</span>
                             </a>
                         </li>
                         <li class="nav-link">
-                            <a href="http://localhost:8080/ozi_war_exploded/messages.jsp">
+                            <a href="/ozi/messages">
                                 <i class='bx bx-message-rounded icon' ></i>
                                 <span class="text nav-text">Messages</span>
                             </a>
                         </li>
                         <li class="nav-link">
-                            <a href="http://localhost:8080/ozi_war_exploded/friends.jsp">
+                            <a href="/friends.jsp">
                                 <i class='bx bx-user icon' ></i>
                                 <span class="text nav-text">Friends</span>
                             </a>
                         </li>
                         <li class="nav-link">
-                            <a href="http://localhost:8080/ozi_war_exploded/followers.jsp">
+                            <a href="/followers.jsp">
                                 <i class='bx bx-group icon' ></i>
                                 <span class="text nav-text">Followers</span>
                             </a>
@@ -57,7 +57,7 @@
                             </a>
                         </li>
                         <li class="nav-link">
-                            <a href="http://localhost:8080/ozi_war_exploded/pomodoro.jsp">
+                            <a href="/pomodoro.jsp">
                                 <i class='bx bx-time-five icon' ></i>
                                 <span class="text nav-text">Timer</span>
                             </a>

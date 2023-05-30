@@ -18,7 +18,7 @@
                             <span class="user__info-row-value">
                                 <form method="post">
                                    <button type="submit"  id="friend" name="friend" value="1"
-                                            class="user__link-info js-search">${friends}</button>
+                                            class="user__link-info statistics__button">${friends}</button>
                                 </form>
                             </span>
                         </div>
@@ -35,7 +35,7 @@
                             <span class="user__info-row-value">
                                 <form method="post">
                                 <button type="submit"  id="follower" name="follower" value="1"
-                                        class="user__link-info js-search">${followers}</button>
+                                        class="user__link-info statistics__button">${followers}</button>
                                 </form>
                             </span>
                         </div>

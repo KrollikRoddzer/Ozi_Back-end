@@ -2,13 +2,6 @@
 
 class PomodoroTimer{
 
-// static is_running;
-// // current_time;
-// static state;
-// pomodoro_count = 0;
-// static max_pomodoro_count = 4;
-// ding = new Audio("audio/ding.mp3"); //switchable
-
 static running_timer;
 constructor(max_pomodoro_count) {
     this.state = PomodoroTimer.POMODORO;
@@ -16,7 +9,6 @@ constructor(max_pomodoro_count) {
     this.is_running = false;
     this.max_pomodoro_count = max_pomodoro_count;
     this.ding = new  Audio("audio/ding.mp3"); 
-   // this.start_timer();
    
 }
 

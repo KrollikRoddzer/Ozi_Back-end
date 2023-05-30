@@ -83,6 +83,13 @@ input{
     background-size: cover;
     padding-top: 40px;
     padding-bottom: 30px;
+    height: 90vh;
+}
+.intro__home{
+    background: url("./../img/OziBg.jpg") center;
+    background-size: cover;
+    padding-top: 40px;
+    padding-bottom: 30px;
 }
 .exit__button{
     padding: 13px 45px;
@@ -185,9 +192,7 @@ input{
 .menu-links{
     padding-top: 120px;
 }
-.sidebar .text{
-    transition: var(--tran-03);
-}
+
 
 .sidebar li{
     height: 50px;
@@ -212,11 +217,9 @@ input{
 .sidebar li .icon,
 .sidebar li .text{
     color: #DD7979;
-    transition: var(--tran-03);
 }
 .sidebar.close li .text{
     color: #dd797900;
-    transition: var(--tran-03);
 }
 .nav-link:hover{
     background:  rgba(255, 210, 135, 0.8);
@@ -1595,6 +1598,11 @@ input[type="number"]:focus {
     color: #744343;
     text-decoration: none;
 }
+.statistics__button{
+    background: transparent;
+    text-align: center;
+    border: none;
+}
 .user__info-row-container{
     display: flex;
     flex-direction: column;
@@ -1839,6 +1847,8 @@ input[type="number"]:focus {
     margin-bottom: 10px;
   }
   .post__text{
+    max-width: 500px;
+
     font-family: 'Lato';
     font-style: normal;
     font-weight: 400;
@@ -2007,6 +2017,7 @@ color: #FFFFFF;
 .message__bg{
     width: 750px;
     padding: 25px 37px;
+    min-height: 500px;
 
     border-radius: 20px;
 
@@ -2014,6 +2025,9 @@ color: #FFFFFF;
     background-color: white;
 
     box-shadow: 8px 10px 17px rgba(0, 0, 0, 0.25);
+}
+.main__part{
+    min-height: 350px;
 }
 .search__chat{
     padding-bottom: 25px;
@@ -2210,7 +2224,7 @@ color: #FFFFFF;
 }
 .people{
     max-height: 600px;
-    overflow-y: scroll;
+    overflow-y: auto;
     padding-right: 30px;
 }
 .element::-webkit-scrollbar {
@@ -2387,7 +2401,7 @@ color: #FFFFFF;
     position: relative;
     width: 800px;
     padding: 20px 42px;
-    box-shadow: 0 4px 16px #cccc;
+    box-shadow: 0 4px 16px #765a5acc;
     font-family: 'Lato';
     background-color: rgba(255, 210, 135, 0.90);
     margin-bottom: 10px;
@@ -2430,7 +2444,7 @@ color: #FFFFFF;
 .statistics__about {
     width: 700px;
     padding: 10px 40px;
-    background-color: rgb(253, 188, 89);
+    background-color: rgb(255, 199, 115);
     
     border-radius: 10px;
     font-family: 'Lato';
@@ -2477,7 +2491,7 @@ color: #FFFFFF;
 
   .close:hover,
   .close:focus {
-    color: #000;
+    color: #744343;
     text-decoration: none;
     cursor: pointer;
   }
