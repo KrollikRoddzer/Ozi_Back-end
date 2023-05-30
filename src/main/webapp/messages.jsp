@@ -133,7 +133,7 @@
                                         String str = request.getParameter("active");
                                         session.setAttribute("activeButton", str);
                                         List<Message> list;
-                                        if (str.equals("") || str == null)
+                                        if (str == null || str.equals(""))
                                         {
                                             list = new ArrayList<>();
                                         }
