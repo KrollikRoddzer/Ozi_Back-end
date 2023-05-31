@@ -6,7 +6,7 @@
         </property>
     </Properties>
     <Appenders>
-        <File name="TxtFile" fileName="logs/log.txt" bufferedIO="true">
+        <File name="TxtFile" fileName="E:\Work\Ozi_Back-end\src\main\resources\log.txt" bufferedIO="true">
             <PatternLayout pattern="${pattern_file}"/>
         </File>
     </Appenders>
@@ -16,3 +16,42 @@
         </Root>
     </Loggers>
 </Configuration>
+
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<Configuration status="INFO">-->
+
+<!--<Appenders>-->
+<!--    <Console name="Console" target="SYSTEM_OUT">-->
+<!--        <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>-->
+<!--    </Console>-->
+<!--    <File name="file" fileName="E:\Work\Ozi_Back-end\src\main\resources\text.log" append="false">-->
+<!--        <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n"/>-->
+<!--    </File>-->
+<!--</Appenders>-->
+
+<!--<Loggers>-->
+
+<!--&lt;!&ndash;    <Logger name= "by.fpmibsu.ozi.Service" level="warn" additivity="false">&ndash;&gt;-->
+<!--&lt;!&ndash;        <AppenderRef ref="file"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    </Logger>&ndash;&gt;-->
+<!--&lt;!&ndash;    <Logger name= "by.fpmibsu.Servlet" level="debug" additivity="false">&ndash;&gt;-->
+<!--&lt;!&ndash;        <AppenderRef ref="file"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    </Logger>&ndash;&gt;-->
+<!--&lt;!&ndash;    <Logger name= "by.fpmibsu.Service" level="debug" additivity="false">&ndash;&gt;-->
+<!--&lt;!&ndash;        <AppenderRef ref="file"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    </Logger>&ndash;&gt;-->
+<!--&lt;!&ndash;    <Logger name= "by.fpmibsu.Services" level="debug" additivity="false">&ndash;&gt;-->
+<!--&lt;!&ndash;        <AppenderRef ref="file"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    </Logger>&ndash;&gt;-->
+<!--&lt;!&ndash;    <Logger name= "by.fpmibsu.Serivce" level="info" additivity="false">&ndash;&gt;-->
+<!--&lt;!&ndash;        <AppenderRef ref="file"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    </Logger>&ndash;&gt;-->
+
+<!--    &lt;!&ndash; Root Logger &ndash;&gt;-->
+<!--    <Root level="error" additivity="false">-->
+<!--        <AppenderRef ref="file"/>-->
+<!--    </Root>-->
+<!--</Loggers>-->
+
+
+<!--</Configuration>-->
