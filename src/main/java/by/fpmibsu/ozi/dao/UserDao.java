@@ -206,7 +206,8 @@ public class UserDao implements Dao<User>
         }
         catch (SQLException | NoSuchAlgorithmException e)
         {
-            throw new DaoException(e.getMessage(), e.getCause());
+            return false;
+            //throw new DaoException(e.getMessage(), e.getCause());
         }
         finally {
             ConnectionPool.closeConnection(connection);
@@ -238,7 +239,7 @@ public class UserDao implements Dao<User>
         }
         catch (SQLException e)
         {
-            throw new DaoException(e.getMessage(), e.getCause());
+            return null;
         }
         finally {
             ConnectionPool.closeConnection(connection);
