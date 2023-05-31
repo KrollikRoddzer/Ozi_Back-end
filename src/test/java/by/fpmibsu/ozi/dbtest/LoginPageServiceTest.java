@@ -78,10 +78,10 @@ public class LoginPageServiceTest
     {
         LoginPageService service = new LoginPageService(new UserDao());
 
-        Assert.assertEquals(true, service.login("stas315172004@mail.ru", "qwerty123"));
-        Assert.assertEquals(false, service.login("stas315172004@mail.ru", "qwerty1234"));
-        Assert.assertEquals(false, service.login("stas3151729999@mail.ru", "asfqwe123"));
-        Assert.assertEquals(true, service.login("+375445918769", "qwerty123"));
+        Assert.assertEquals(1, (int)service.login("stas315172004@mail.ru", "qwerty123"));
+        Assert.assertEquals(null, service.login("stas315172004@mail.ru", "qwerty1234"));
+        Assert.assertEquals(null, service.login("stas3151729999@mail.ru", "asfqwe123"));
+        Assert.assertEquals(1, (int)service.login("+375445918769", "qwerty123"));
     }
     @After
     public void tearDown() {

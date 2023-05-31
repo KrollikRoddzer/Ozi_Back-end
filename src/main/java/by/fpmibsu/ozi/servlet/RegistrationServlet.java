@@ -25,6 +25,7 @@ public class RegistrationServlet extends HttpServlet
     private final RegistrationPageService service = new RegistrationPageService(new UserDao());
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        logger.log(Level.INFO, "Getting register page info.");
         final Long id = (Long) req.getSession().getAttribute("userId");
         if (id == null)
         {
@@ -38,6 +39,7 @@ public class RegistrationServlet extends HttpServlet
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        logger.log(Level.INFO, "Registering");
         User user = new User(
                 0,
                 req.getParameter("phone"),

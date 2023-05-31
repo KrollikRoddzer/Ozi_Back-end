@@ -4,6 +4,9 @@ import by.fpmibsu.ozi.dao.*;
 import by.fpmibsu.ozi.entity.User;
 import by.fpmibsu.ozi.services.ProfilePageService;
 import by.fpmibsu.ozi.services.Status;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,9 +21,11 @@ import java.text.SimpleDateFormat;
 @WebServlet("/ozi")
 public class ProfilePageServlet extends HttpServlet
 {
+    static Logger logger = LogManager.getLogger(LoginPageServlet.class.getName());
     private final ProfilePageService service = new ProfilePageService(new UserDao(), new FriendDao(), new PostDao(), new FriendRequestDao());
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        logger.log(Level.INFO, "getting profile info");
         HttpSession session = req.getSession();
         Integer userId = (Integer) session.getAttribute("userId");
         Integer pageId;
@@ -66,6 +71,7 @@ public class ProfilePageServlet extends HttpServlet
             else
                 req.getRequestDispatcher("/another.jsp").forward(req, resp);
         } catch (DaoException | InterruptedException | ParseException e) {
+            logger.log(Level.INFO, "Something went wrong " + e.getMessage());
             throw new RuntimeException(e);
         }
     }
@@ -75,11 +81,13 @@ public class ProfilePageServlet extends HttpServlet
     {
         if (req.getParameter("exit") != null)
         {
+            logger.log(Level.INFO, "Logging out.");
             req.getSession().invalidate();
             resp.sendRedirect("/ozi/login");
         }
         else if (req.getParameter("friend") != null)
         {
+            logger.log(Level.INFO, "Finding user friends");
             if (req.getParameter("pageId") != null)
             {
                 //String id = req.getParameter("pageId");
@@ -93,6 +101,7 @@ public class ProfilePageServlet extends HttpServlet
         }
         else if (req.getParameter("follower") != null)
         {
+            logger.log(Level.INFO, "Finding user followers.");
             if (req.getParameter("pageId") != null)
             {
                 //String id = req.getParameter("pageId");
@@ -104,11 +113,6 @@ public class ProfilePageServlet extends HttpServlet
                 resp.sendRedirect("/ozi/followers?id=" + req.getSession().getAttribute("userId"));
             }
         }
-
-    }
-
-    void postHelpMethod(HttpServletRequest req, HttpServletResponse resp)
-    {
 
     }
 }

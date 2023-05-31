@@ -21,7 +21,7 @@
                             </a>
                         </li>
                         <li class="nav-link">
-                            <a href="/index.jsp">
+                            <a href="/ozi">
                                 <i class='bx bx-news icon' ></i>
                                 <span class="text nav-text">News</span>
                             </a>
@@ -33,13 +33,13 @@
                             </a>
                         </li>
                         <li class="nav-link">
-                            <a href="/friends.jsp">
+                            <a href="/ozi/friends">
                                 <i class='bx bx-user icon' ></i>
                                 <span class="text nav-text">Friends</span>
                             </a>
                         </li>
                         <li class="nav-link">
-                            <a href="/followers.jsp">
+                            <a href="/ozi/followers">
                                 <i class='bx bx-group icon' ></i>
                                 <span class="text nav-text">Followers</span>
                             </a>

@@ -56,6 +56,10 @@ public class ProfilePageService
             logger.log(Level.ERROR, "Page user id is null!");
             return Status.ME;
         }
+        if (unknownId == null)
+        {
+            return Status.ME;
+        }
         if (userDao.findById(unknownId) == null)
         {
             return Status.ME;
@@ -110,6 +114,7 @@ public class ProfilePageService
     }
 
     public boolean createPost(Integer userId, String text, java.util.Date date) throws DaoException, InterruptedException {
+        logger.log(Level.INFO, "Creation post for user with id " + userId);
         User user = userDao.findById(userId);
         if (user == null) throw new DaoException();
         java.sql.Date sqlDate = new java.sql.Date(date.getTime());
@@ -123,19 +128,22 @@ public class ProfilePageService
     }
 
     public boolean acceptRequest(Integer user_id, Integer friend_id) throws DaoException, InterruptedException {
-
+        logger.log(Level.INFO, "User with id " + user_id + " now friend with user " + friend_id);
         return friendDao.create(new Friend(userDao.findById(user_id), userDao.findById(friend_id), new Date(new java.util.Date().getTime())));
     }
 
     public boolean sendRequest(Integer sender_id, Integer receiver_id) throws DaoException, InterruptedException {
+        logger.log(Level.INFO, "User with id " + sender_id + " sent friends request to user with id " + receiver_id);
         return friendRequestDao.create(new FriendRequest(userDao.findById(receiver_id), userDao.findById(sender_id), new Date(new java.util.Date().getTime())));
     }
 
     public boolean deleteFriend(Integer user_id, Integer friend_id) throws DaoException, InterruptedException {
+        logger.log(Level.INFO, "User with id " + user_id + " delete friend with id " + friend_id);
         return friendDao.delete(new Friend(userDao.findById(user_id), userDao.findById(friend_id), new Date(new java.util.Date().getTime())));
     }
 
     public boolean unsendRequest(Integer sender_id, Integer receiver_id) throws DaoException, InterruptedException {
+        logger.log(Level.INFO, "User with id " + sender_id + " unsent friends request from user with id " + receiver_id);
         return friendRequestDao.delete(new FriendRequest(userDao.findById(receiver_id), userDao.findById(sender_id), new Date(new java.util.Date().getTime())));
     }
 }

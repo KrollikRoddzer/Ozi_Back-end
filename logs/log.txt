@@ -333,3 +333,589 @@
 2023-05-28 16:27:16 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Registering user.
 2023-05-28 16:27:17 [main] ERROR by.fpmibsu.ozi.services.RegistrationPageService- Unable to create user because Duplicate entry '+375445918769' for key 'user.phone_UNIQUE'
 2023-05-30 20:03:13 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:57:38 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Created DialogPageService.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 1 and 2.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 2 and 1.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 2 and 3.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 3 and 2.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 3 and 5.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 6 and 8.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Created DialogPageService.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Sending message from user with id 1 to user with id 2.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Successfully sent.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 1 and 2.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 2 and 1.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Sending message from user with id 1 to user with id 10.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Unable to send.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 1 and 10.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 10 and 1.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Created DialogPageService.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting all friends of user with id: 1.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Created DialogPageService.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.FindPeoplePageService- Created FindPeoplePageService.
+
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.FindPeoplePageService- Finding people by name in method findByName.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.FindPeoplePageService- Finding people by name in method findByName.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.FindPeoplePageService- Created FindPeoplePageService.
+
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Created FollowersPageService.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Getting all followers of user with id 3.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Getting all followers of user with id 2.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Getting all followers of user with id 1.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Created FollowersPageService.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Created FriendsPageService.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Getting all friends of user with id 3.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Getting all friends of user with id 2.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Getting all friends of user with id 1.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Created FriendsPageService.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Created LoginPageService.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- User is trying to log in.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Comparing passwords in method comparePassword.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Successfully logged in.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Editing about of user with id: 1.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- About of user with id 1 +375445918769 stas315172004@mail.ru daaad6e5604e8e17bd9f108d91e26afe6281dac8fda0091040a7a6d7bd9b43b5 Stas Zaycev 2004-02-05 m Belarus Minsk Hello world!!! null  is edited.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting user information with id: 1.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Guest has got to his own page.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 09:57:39 [main] ERROR by.fpmibsu.ozi.services.ProfilePageService- Page user id is null!
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting all posts of user with id: 1.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting all posts of user with id: 1.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting all followers of user with id: 2.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting all followers of user with id: 1.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting friends count of user with id: 3.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting user information with id: 1.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting user information with id: 12.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting friends count of user with id: 1.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting friends count of user with id: 2.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Create RegistrationPageService.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Registering user.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- User: 47 +375291238055 zaichikova@tut.by af41e68e1309fa29a5044cbdc36b90a3821d8807e68c7675a6c495112bc8a55f Marina Zayceva 1982-06-02 f null null null null  registered.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Create RegistrationPageService.
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Registering user.
+2023-05-31 09:57:39 [main] ERROR by.fpmibsu.ozi.services.RegistrationPageService- Unable to create user because Duplicate entry '+375445918769' for key 'user.phone_UNIQUE'
+2023-05-31 09:57:39 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Registering user.
+2023-05-31 09:57:39 [main] ERROR by.fpmibsu.ozi.services.RegistrationPageService- Unable to create user because Duplicate entry 'stas315172004@mail.ru' for key 'user.email_UNIQUE'
+2023-05-31 09:59:14 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Created DialogPageService.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 1 and 2.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 2 and 1.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 2 and 3.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 3 and 2.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 3 and 5.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 6 and 8.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Created DialogPageService.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Sending message from user with id 1 to user with id 2.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Successfully sent.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 1 and 2.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 2 and 1.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Sending message from user with id 1 to user with id 10.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Unable to send.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 1 and 10.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 10 and 1.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Created DialogPageService.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting all friends of user with id: 1.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Created DialogPageService.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.FindPeoplePageService- Created FindPeoplePageService.
+
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.FindPeoplePageService- Finding people by name in method findByName.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.FindPeoplePageService- Finding people by name in method findByName.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.FindPeoplePageService- Created FindPeoplePageService.
+
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Created FollowersPageService.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Getting all followers of user with id 3.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Getting all followers of user with id 2.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Getting all followers of user with id 1.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Created FollowersPageService.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Created FriendsPageService.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Getting all friends of user with id 3.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Getting all friends of user with id 2.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Getting all friends of user with id 1.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Created FriendsPageService.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Created LoginPageService.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- User is trying to log in.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Comparing passwords in method comparePassword.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Successfully logged in.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- User is trying to log in.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Comparing passwords in method comparePassword.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Unable to log in, wrong password.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- User is trying to log in.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- No user with following phone or email: stas3151729999@mail.ru.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- User is trying to log in.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Comparing passwords in method comparePassword.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Successfully logged in.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Editing about of user with id: 1.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- About of user with id 1 +375445918769 stas315172004@mail.ru daaad6e5604e8e17bd9f108d91e26afe6281dac8fda0091040a7a6d7bd9b43b5 Stas Zaycev 2004-02-05 m Belarus Minsk Hello world!!! null  is edited.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting user information with id: 1.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Guest has got to his own page.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 09:59:15 [main] ERROR by.fpmibsu.ozi.services.ProfilePageService- Page user id is null!
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting all posts of user with id: 1.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting all posts of user with id: 1.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting all followers of user with id: 2.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting all followers of user with id: 1.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting friends count of user with id: 3.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting user information with id: 1.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting user information with id: 12.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting friends count of user with id: 1.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting friends count of user with id: 2.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Create RegistrationPageService.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Registering user.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- User: 50 +375291238055 zaichikova@tut.by af41e68e1309fa29a5044cbdc36b90a3821d8807e68c7675a6c495112bc8a55f Marina Zayceva 1982-06-02 f null null null null  registered.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Create RegistrationPageService.
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Registering user.
+2023-05-31 09:59:15 [main] ERROR by.fpmibsu.ozi.services.RegistrationPageService- Unable to create user because Duplicate entry '+375445918769' for key 'user.phone_UNIQUE'
+2023-05-31 09:59:15 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Registering user.
+2023-05-31 09:59:15 [main] ERROR by.fpmibsu.ozi.services.RegistrationPageService- Unable to create user because Duplicate entry 'stas315172004@mail.ru' for key 'user.email_UNIQUE'
+2023-05-31 09:59:30 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Created DialogPageService.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 1 and 2.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 2 and 1.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 2 and 3.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 3 and 2.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 3 and 5.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 6 and 8.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Created DialogPageService.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Sending message from user with id 1 to user with id 2.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Successfully sent.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 1 and 2.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 2 and 1.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Sending message from user with id 1 to user with id 10.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Unable to send.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 1 and 10.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 10 and 1.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Created DialogPageService.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting all friends of user with id: 1.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Created DialogPageService.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.FindPeoplePageService- Created FindPeoplePageService.
+
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.FindPeoplePageService- Finding people by name in method findByName.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.FindPeoplePageService- Finding people by name in method findByName.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.FindPeoplePageService- Created FindPeoplePageService.
+
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Created FollowersPageService.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Getting all followers of user with id 3.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Getting all followers of user with id 2.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Getting all followers of user with id 1.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Created FollowersPageService.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Created FriendsPageService.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Getting all friends of user with id 3.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Getting all friends of user with id 2.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Getting all friends of user with id 1.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Created FriendsPageService.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Created LoginPageService.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- User is trying to log in.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Comparing passwords in method comparePassword.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Successfully logged in.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- User is trying to log in.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Comparing passwords in method comparePassword.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Unable to log in, wrong password.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- User is trying to log in.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- No user with following phone or email: stas3151729999@mail.ru.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- User is trying to log in.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Comparing passwords in method comparePassword.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Successfully logged in.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Editing about of user with id: 1.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- About of user with id 1 +375445918769 stas315172004@mail.ru daaad6e5604e8e17bd9f108d91e26afe6281dac8fda0091040a7a6d7bd9b43b5 Stas Zaycev 2004-02-05 m Belarus Minsk Hello world!!! null  is edited.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting user information with id: 1.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Guest has got to his own page.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 09:59:31 [main] ERROR by.fpmibsu.ozi.services.ProfilePageService- Page user id is null!
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Guest is friend of the page owner.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Guest is friend of the page owner.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Page owner is follower of the guest.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Guest has sent friend request to this user.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting all posts of user with id: 1.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting all posts of user with id: 1.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting all followers of user with id: 2.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting all followers of user with id: 1.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting friends count of user with id: 3.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting user information with id: 1.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting user information with id: 12.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting friends count of user with id: 1.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting friends count of user with id: 2.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Create RegistrationPageService.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Registering user.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- User: 53 +375291238055 zaichikova@tut.by af41e68e1309fa29a5044cbdc36b90a3821d8807e68c7675a6c495112bc8a55f Marina Zayceva 1982-06-02 f null null null null  registered.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Create RegistrationPageService.
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Registering user.
+2023-05-31 09:59:31 [main] ERROR by.fpmibsu.ozi.services.RegistrationPageService- Unable to create user because Duplicate entry '+375445918769' for key 'user.phone_UNIQUE'
+2023-05-31 09:59:31 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Registering user.
+2023-05-31 09:59:31 [main] ERROR by.fpmibsu.ozi.services.RegistrationPageService- Unable to create user because Duplicate entry 'stas315172004@mail.ru' for key 'user.email_UNIQUE'
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Created DialogPageService.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 1 and 2.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 2 and 1.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 2 and 3.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 3 and 2.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 3 and 5.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 6 and 8.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Created DialogPageService.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Sending message from user with id 1 to user with id 2.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Successfully sent.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 1 and 2.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 2 and 1.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Sending message from user with id 1 to user with id 10.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Unable to send.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 1 and 10.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 10 and 1.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Created DialogPageService.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting all friends of user with id: 1.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Created DialogPageService.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.FindPeoplePageService- Created FindPeoplePageService.
+
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.FindPeoplePageService- Finding people by name in method findByName.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.FindPeoplePageService- Finding people by name in method findByName.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.FindPeoplePageService- Created FindPeoplePageService.
+
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Created FollowersPageService.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Getting all followers of user with id 3.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Getting all followers of user with id 2.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Getting all followers of user with id 1.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Created FollowersPageService.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Created FriendsPageService.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Getting all friends of user with id 3.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Getting all friends of user with id 2.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Getting all friends of user with id 1.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Created FriendsPageService.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Created LoginPageService.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- User is trying to log in.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Comparing passwords in method comparePassword.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Successfully logged in.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- User is trying to log in.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Comparing passwords in method comparePassword.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Unable to log in, wrong password.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- User is trying to log in.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- No user with following phone or email: stas3151729999@mail.ru.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- User is trying to log in.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Comparing passwords in method comparePassword.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Successfully logged in.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Editing about of user with id: 1.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- About of user with id 1 +375445918769 stas315172004@mail.ru daaad6e5604e8e17bd9f108d91e26afe6281dac8fda0091040a7a6d7bd9b43b5 Stas Zaycev 2004-02-05 m Belarus Minsk Hello world!!! null  is edited.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting user information with id: 1.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Guest has got to his own page.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 09:59:49 [main] ERROR by.fpmibsu.ozi.services.ProfilePageService- Page user id is null!
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Guest is friend of the page owner.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Guest is friend of the page owner.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Page owner is follower of the guest.
+2023-05-31 09:59:49 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 09:59:50 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Guest has sent friend request to this user.
+2023-05-31 09:59:50 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 09:59:50 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 09:59:50 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:59:50 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting all posts of user with id: 1.
+2023-05-31 09:59:50 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting all posts of user with id: 1.
+2023-05-31 09:59:50 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:59:50 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting all followers of user with id: 2.
+2023-05-31 09:59:50 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting all followers of user with id: 1.
+2023-05-31 09:59:50 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting friends count of user with id: 3.
+2023-05-31 09:59:50 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:59:50 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting user information with id: 1.
+2023-05-31 09:59:50 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting user information with id: 12.
+2023-05-31 09:59:50 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:59:50 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 09:59:50 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting friends count of user with id: 1.
+2023-05-31 09:59:50 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting friends count of user with id: 2.
+2023-05-31 09:59:50 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Create RegistrationPageService.
+2023-05-31 09:59:50 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Registering user.
+2023-05-31 09:59:50 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- User: 56 +375291238055 zaichikova@tut.by af41e68e1309fa29a5044cbdc36b90a3821d8807e68c7675a6c495112bc8a55f Marina Zayceva 1982-06-02 f null null null null  registered.
+2023-05-31 09:59:50 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Create RegistrationPageService.
+2023-05-31 09:59:50 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Registering user.
+2023-05-31 09:59:50 [main] ERROR by.fpmibsu.ozi.services.RegistrationPageService- Unable to create user because Duplicate entry '+375445918769' for key 'user.phone_UNIQUE'
+2023-05-31 09:59:50 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Registering user.
+2023-05-31 09:59:50 [main] ERROR by.fpmibsu.ozi.services.RegistrationPageService- Unable to create user because Duplicate entry 'stas315172004@mail.ru' for key 'user.email_UNIQUE'
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Created DialogPageService.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 1 and 2.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 2 and 1.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 2 and 3.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 3 and 2.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 3 and 5.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 6 and 8.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Created DialogPageService.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Sending message from user with id 1 to user with id 2.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Successfully sent.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 1 and 2.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 2 and 1.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Sending message from user with id 1 to user with id 10.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Unable to send.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 1 and 10.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 10 and 1.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Created DialogPageService.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting all friends of user with id: 1.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Created DialogPageService.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.FindPeoplePageService- Created FindPeoplePageService.
+
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.FindPeoplePageService- Finding people by name in method findByName.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.FindPeoplePageService- Finding people by name in method findByName.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.FindPeoplePageService- Created FindPeoplePageService.
+
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Created FollowersPageService.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Getting all followers of user with id 3.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Getting all followers of user with id 2.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Getting all followers of user with id 1.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Created FollowersPageService.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Created FriendsPageService.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Getting all friends of user with id 3.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Getting all friends of user with id 2.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Getting all friends of user with id 1.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Created FriendsPageService.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Created LoginPageService.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- User is trying to log in.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Comparing passwords in method comparePassword.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Successfully logged in.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- User is trying to log in.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Comparing passwords in method comparePassword.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Unable to log in, wrong password.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- User is trying to log in.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- No user with following phone or email: stas3151729999@mail.ru.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- User is trying to log in.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Comparing passwords in method comparePassword.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Successfully logged in.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Editing about of user with id: 1.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- About of user with id 1 +375445918769 stas315172004@mail.ru daaad6e5604e8e17bd9f108d91e26afe6281dac8fda0091040a7a6d7bd9b43b5 Stas Zaycev 2004-02-05 m Belarus Minsk Hello world!!! null  is edited.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting user information with id: 1.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Guest has got to his own page.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 10:01:15 [main] ERROR by.fpmibsu.ozi.services.ProfilePageService- Page user id is null!
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Guest is friend of the page owner.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Guest is friend of the page owner.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Page owner is follower of the guest.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Guest has sent friend request to this user.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting all posts of user with id: 1.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting all posts of user with id: 1.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting all followers of user with id: 2.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting all followers of user with id: 1.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting friends count of user with id: 3.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting user information with id: 1.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting user information with id: 12.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting friends count of user with id: 1.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting friends count of user with id: 2.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Create RegistrationPageService.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Registering user.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- User: 59 +375291238055 zaichikova@tut.by af41e68e1309fa29a5044cbdc36b90a3821d8807e68c7675a6c495112bc8a55f Marina Zayceva 1982-06-02 f null null null null  registered.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Create RegistrationPageService.
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Registering user.
+2023-05-31 10:01:15 [main] ERROR by.fpmibsu.ozi.services.RegistrationPageService- Unable to create user because Duplicate entry '+375445918769' for key 'user.phone_UNIQUE'
+2023-05-31 10:01:15 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Registering user.
+2023-05-31 10:01:15 [main] ERROR by.fpmibsu.ozi.services.RegistrationPageService- Unable to create user because Duplicate entry 'stas315172004@mail.ru' for key 'user.email_UNIQUE'
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Created DialogPageService.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 1 and 2.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 2 and 1.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 2 and 3.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 3 and 2.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 3 and 5.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 6 and 8.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Created DialogPageService.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Sending message from user with id 1 to user with id 2.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Successfully sent.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 1 and 2.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 2 and 1.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Sending message from user with id 1 to user with id 10.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Unable to send.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 1 and 10.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 10 and 1.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Created DialogPageService.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting all friends of user with id: 1.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Created DialogPageService.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.FindPeoplePageService- Created FindPeoplePageService.
+
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.FindPeoplePageService- Finding people by name in method findByName.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.FindPeoplePageService- Finding people by name in method findByName.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.FindPeoplePageService- Created FindPeoplePageService.
+
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Created FollowersPageService.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Getting all followers of user with id 3.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Getting all followers of user with id 2.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Getting all followers of user with id 1.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Created FollowersPageService.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Created FriendsPageService.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Getting all friends of user with id 3.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Getting all friends of user with id 2.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Getting all friends of user with id 1.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Created FriendsPageService.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Created LoginPageService.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- User is trying to log in.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Comparing passwords in method comparePassword.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Successfully logged in.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- User is trying to log in.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Comparing passwords in method comparePassword.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Unable to log in, wrong password.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- User is trying to log in.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- No user with following phone or email: stas3151729999@mail.ru.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- User is trying to log in.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Comparing passwords in method comparePassword.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Successfully logged in.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Editing about of user with id: 1.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- About of user with id 1 +375445918769 stas315172004@mail.ru daaad6e5604e8e17bd9f108d91e26afe6281dac8fda0091040a7a6d7bd9b43b5 Stas Zaycev 2004-02-05 m Belarus Minsk Hello world!!! null  is edited.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting user information with id: 1.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Guest has got to his own page.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 10:02:45 [main] ERROR by.fpmibsu.ozi.services.ProfilePageService- Page user id is null!
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Guest is friend of the page owner.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Guest is friend of the page owner.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Page owner is follower of the guest.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Guest has sent friend request to this user.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting all posts of user with id: 1.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting all posts of user with id: 1.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting all followers of user with id: 2.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting all followers of user with id: 1.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting friends count of user with id: 3.
+2023-05-31 10:02:45 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 10:02:46 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting user information with id: 1.
+2023-05-31 10:02:46 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting user information with id: 12.
+2023-05-31 10:02:46 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 10:02:46 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 10:02:46 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting friends count of user with id: 1.
+2023-05-31 10:02:46 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting friends count of user with id: 2.
+2023-05-31 10:02:46 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Create RegistrationPageService.
+2023-05-31 10:02:46 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Registering user.
+2023-05-31 10:02:46 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- User: 62 +375291238055 zaichikova@tut.by af41e68e1309fa29a5044cbdc36b90a3821d8807e68c7675a6c495112bc8a55f Marina Zayceva 1982-06-02 f null null null null  registered.
+2023-05-31 10:02:46 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Create RegistrationPageService.
+2023-05-31 10:02:46 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Registering user.
+2023-05-31 10:02:46 [main] ERROR by.fpmibsu.ozi.services.RegistrationPageService- Unable to create user because Duplicate entry '+375445918769' for key 'user.phone_UNIQUE'
+2023-05-31 10:02:46 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Registering user.
+2023-05-31 10:02:46 [main] ERROR by.fpmibsu.ozi.services.RegistrationPageService- Unable to create user because Duplicate entry 'stas315172004@mail.ru' for key 'user.email_UNIQUE'
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Created DialogPageService.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 1 and 2.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 2 and 1.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 2 and 3.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 3 and 2.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 3 and 5.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 6 and 8.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Created DialogPageService.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Sending message from user with id 1 to user with id 2.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Successfully sent.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 1 and 2.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 2 and 1.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Sending message from user with id 1 to user with id 10.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Unable to send.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 1 and 10.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting messages of users with ids: 10 and 1.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Created DialogPageService.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Getting all friends of user with id: 1.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.DialogPageService- Created DialogPageService.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.FindPeoplePageService- Created FindPeoplePageService.
+
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.FindPeoplePageService- Finding people by name in method findByName.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.FindPeoplePageService- Finding people by name in method findByName.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.FindPeoplePageService- Created FindPeoplePageService.
+
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Created FollowersPageService.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Getting all followers of user with id 3.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Getting all followers of user with id 2.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Getting all followers of user with id 1.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.FollowersPageService- Created FollowersPageService.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Created FriendsPageService.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Getting all friends of user with id 3.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Getting all friends of user with id 2.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Getting all friends of user with id 1.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.FriendsPageService- Created FriendsPageService.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Created LoginPageService.
+2023-05-31 10:02:53 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- User is trying to log in.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Comparing passwords in method comparePassword.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Successfully logged in.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- User is trying to log in.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Comparing passwords in method comparePassword.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Unable to log in, wrong password.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- User is trying to log in.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- No user with following phone or email: stas3151729999@mail.ru.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- User is trying to log in.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Comparing passwords in method comparePassword.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.LoginPageService- Successfully logged in.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Editing about of user with id: 1.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- About of user with id 1 +375445918769 stas315172004@mail.ru daaad6e5604e8e17bd9f108d91e26afe6281dac8fda0091040a7a6d7bd9b43b5 Stas Zaycev 2004-02-05 m Belarus Minsk Hello world!!! null  is edited.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting user information with id: 1.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Guest has got to his own page.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 10:02:54 [main] ERROR by.fpmibsu.ozi.services.ProfilePageService- Page user id is null!
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Guest is friend of the page owner.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Guest is friend of the page owner.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Page owner is follower of the guest.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Guest has sent friend request to this user.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting guest status of page.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting all posts of user with id: 1.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting all posts of user with id: 1.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting all followers of user with id: 2.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting all followers of user with id: 1.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting friends count of user with id: 3.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting user information with id: 1.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting user information with id: 12.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Created ProfilePageService.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting friends count of user with id: 1.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.ProfilePageService- Getting friends count of user with id: 2.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Create RegistrationPageService.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Registering user.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- User: 65 +375291238055 zaichikova@tut.by af41e68e1309fa29a5044cbdc36b90a3821d8807e68c7675a6c495112bc8a55f Marina Zayceva 1982-06-02 f null null null null  registered.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Create RegistrationPageService.
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Registering user.
+2023-05-31 10:02:54 [main] ERROR by.fpmibsu.ozi.services.RegistrationPageService- Unable to create user because Duplicate entry '+375445918769' for key 'user.phone_UNIQUE'
+2023-05-31 10:02:54 [main] INFO  by.fpmibsu.ozi.services.RegistrationPageService- Registering user.
+2023-05-31 10:02:54 [main] ERROR by.fpmibsu.ozi.services.RegistrationPageService- Unable to create user because Duplicate entry 'stas315172004@mail.ru' for key 'user.email_UNIQUE'

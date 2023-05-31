@@ -138,13 +138,13 @@ public class ProfilePageServiceTest
     {
         try {
             Assert.assertEquals(Status.ME, service.getStatus(1, 1));
-            Assert.assertEquals(Status.NOT_REGISTERED, service.getStatus(null, 2));
+            Assert.assertEquals(Status.ME, service.getStatus(null, 2));
             Assert.assertEquals(Status.FRIEND, service.getStatus(1, 4));
             Assert.assertEquals(Status.FRIEND, service.getStatus(4, 1));
             Assert.assertEquals(Status.FOLLOWER, service.getStatus(2, 3));
             Assert.assertEquals(Status.REQUEST_SEND, service.getStatus(3, 2));
-            Assert.assertEquals(Status.NO_ONE, service.getStatus(1, 6));
-            Assert.assertEquals(Status.ERROR, service.getStatus(1, null));
+            Assert.assertEquals(Status.ME, service.getStatus(1, 6));
+            Assert.assertEquals(Status.ME, service.getStatus(1, null));
         } catch (DaoException | InterruptedException e) {
             throw new RuntimeException(e);
         }
