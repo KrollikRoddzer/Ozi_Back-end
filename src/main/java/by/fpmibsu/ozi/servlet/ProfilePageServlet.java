@@ -56,7 +56,7 @@ public class ProfilePageServlet extends HttpServlet
 
             SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd");
             SimpleDateFormat outputFormat = new SimpleDateFormat("MMMM d, yyyy");
-            String inputDateStr = String.valueOf(service.getUserInfo(userId).getBirthday());
+            String inputDateStr = String.valueOf(service.getUserInfo(user.getId()).getBirthday());
             java.util.Date inputDate = inputFormat.parse(inputDateStr);
             String outputDateStr = outputFormat.format(inputDate).toUpperCase();
             req.setAttribute("birthday", outputDateStr);
