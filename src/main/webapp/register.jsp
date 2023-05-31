@@ -22,7 +22,7 @@
         </div>
         <!-- header end -->
         <main class="main">
-            <section class="intro">
+            <section class="intro__home">
                 <!-- form start -->
                 <div class="wrapper__form">
                     <form class="form" id="form" method="post" action="/ozi/register">
@@ -180,7 +180,7 @@
             </section>
 
         </main>
-       <!-- <script src="${pageContext.request.contextPath}/js/main.js"></script> -->
+       <script src="${pageContext.request.contextPath}/js/main.js"></script>
 
     </body>
 </html>

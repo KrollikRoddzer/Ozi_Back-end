@@ -39,150 +39,150 @@
 
         <div class="profile__wrap">
             <div class="chat__windows">
-                <div >
 
-                    <div class="message__list">
-                        <div class="search__chat">
-                            <div class="search__items">
-                                <div class="search__item">
-                                    <p class="dialogs__title">Dialogs</p>
-                                </div>
+                <div class="message__list">
+                    <div class="search__chat">
+                        <div class="search__items">
+                            <div class="search__item">
+                                <p class="dialogs__title">Dialogs</p>
                             </div>
                         </div>
-
-                        <form method="get" class="people element">
-                            <div class="dialogs element">
-                                <%
-                                    DialogPageService service = new DialogPageService(new UserDao(), new MessageDao(), new FriendDao());
-                                    Integer userId = (Integer) request.getSession().getAttribute("userId");
-                                    List<User> friends = new ArrayList<>();
-                                    try {
-                                        friends = service.getFriends(userId);
-                                    } catch (DaoException | InterruptedException e) {
-                                        throw new RuntimeException(e);
-                                    }
-                                    for (User friend : friends) {
-                                        session.setAttribute("friendId", friend.getId().toString());
-                                        session.setAttribute("radioId", "radio-" + friend.getId());
-                                %>
-                                <button class="user__but" name="active" value=${friendId}>
-                                    <div class="chats">
-                                        <div class="start_chat">
-                                            <div class="chat">
-                                                <div class="chat__img">
-                                                    <img class="chat__pic" src="${pageContext.request.contextPath}/img/Ozi.png" width="60" height="60" alt="user photo">
-                                                </div>
-                                            </div>
-                                            <div class="chat">
-                                                <div class="chat__center">
-                                                    <div class="chat__name">
-                                                        <% session.setAttribute("user",friend.getName() +
-                                                                " " + friend.getSurname() );
-                                                        %>
-                                                        ${user}
-                                                    </div>
-                                                    <div class="chat__last">
-                                                        <span class="your__message">you:</span>
-                                                        Am I the only one keeping track...
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="chat">
-                                            <div class="chat__time">
-                                                <div class="chat__last">23:07</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </button>
-                            </div>
-                            <% } %>
-                        </form>
                     </div>
-                    <div class="message__bg">
-                        <div class="info__part">
-                            <div class="name__part">
-                                <%
-                                    session.setAttribute("activeButton", request.getParameter("active"));
-                                    User user;
-                                    if (session.getAttribute("activeButton") == null || session.getAttribute("activeButton").equals(""))
-                                    {
-                                        user = null;
-                                    }
-                                    else
-                                        user = new UserDao().findById(Integer.parseInt(request.getParameter("active")));
-                                    if (user != null)
-                                        session.setAttribute("DialogName", user.getName() + " " + user.getSurname());
-                                    else
-                                        session.setAttribute("DialogName", "");
-                                %>
-                            </div>
-                            <div class="time__part">
-                                ${DialogName}
-                            </div>
-                        </div>
-                        <div class="main__part">
-                            <div class="messages element">
-                                <%
-                                    service = new DialogPageService(new UserDao(), new MessageDao(), new FriendDao());
-                                    String str = request.getParameter("active");
-                                    session.setAttribute("activeButton", str);
-                                    List<Message> list;
-                                    if (str == null || str.equals(""))
-                                    {
-                                        list = new ArrayList<>();
-                                    }
-                                    else
-                                    {
-                                        list = service.getMessages(userId, Integer.parseInt(request.getParameter("active")));
-                                    }
-                                    for (Message message : list) {
-                                        session.setAttribute("messageName", message.getSentUser().getName());
-                                        session.setAttribute("messageText", message.getText());
-                                        session.setAttribute("messageDate", message.getMessageDate());
-                                %>
-                                <div class="message">
-                                    <div class="message_item-start">
-                                        <div class="message_item">
-                                            <div class="message__img">
+
+                    <form method="get" class="people element">
+                        <div class="dialogs element">
+                            <%
+                                DialogPageService service = new DialogPageService(new UserDao(), new MessageDao(), new FriendDao());
+                                Integer userId = (Integer) request.getSession().getAttribute("userId");
+                                List<User> friends = new ArrayList<>();
+                                try {
+                                    friends = service.getFriends(userId);
+                                } catch (DaoException | InterruptedException e) {
+                                    throw new RuntimeException(e);
+                                }
+                                for (User friend : friends) {
+                                    session.setAttribute("friendId", friend.getId().toString());
+                                    session.setAttribute("radioId", "radio-" + friend.getId());
+                            %>
+                            <button class="user__but" name="active" value=${friendId}>
+                                <div class="chats">
+                                    <div class="start_chat">
+                                        <div class="chat">
+                                            <div class="chat__img">
                                                 <img class="chat__pic" src="${pageContext.request.contextPath}/img/Ozi.png" width="60" height="60" alt="user photo">
                                             </div>
                                         </div>
-                                        <div class="message_item">
+                                        <div class="chat">
                                             <div class="chat__center">
-                                                <div class="chat__name companion">
-                                                    ${messageName}
+                                                <div class="chat__name">
+                                                    <% session.setAttribute("user",friend.getName() +
+                                                            " " + friend.getSurname() );
+                                                    %>
+                                                    ${user}
                                                 </div>
-                                                <div class="chat__last comp_message">
-                                                    ${messageText}
+                                                <div class="chat__last">
+                                                    <span class="your__message">you:</span>
+                                                    Am I the only one keeping track...
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="message_item">
+                                    <div class="chat">
                                         <div class="chat__time">
-                                            <div class="chat__last">${messageDate}</div>
+                                            <div class="chat__last">23:07</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </button>
+                            <% } %>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="message__bg">
+                    <div class="info__part">
+                        <div class="name__part">
+                            <%
+                                session.setAttribute("activeButton", request.getParameter("active"));
+                                User user;
+                                if (session.getAttribute("activeButton") == null || session.getAttribute("activeButton").equals(""))
+                                {
+                                    user = null;
+                                }
+                                else
+                                    user = new UserDao().findById(Integer.parseInt(request.getParameter("active")));
+                                if (user != null)
+                                    session.setAttribute("DialogName", user.getName() + " " + user.getSurname());
+                                else
+                                    session.setAttribute("DialogName", "");
+                            %>
+                        </div>
+                        <div class="time__part">
+                            ${DialogName}
+                        </div>
+                    </div>
+                    <div class="main__part">
+                        <div class="messages element">
+                            <%
+                                service = new DialogPageService(new UserDao(), new MessageDao(), new FriendDao());
+                                String str = request.getParameter("active");
+                                session.setAttribute("activeButton", str);
+                                List<Message> list;
+                                if (str == null || str.equals(""))
+                                {
+                                    list = new ArrayList<>();
+                                }
+                                else
+                                {
+                                    list = service.getMessages(userId, Integer.parseInt(request.getParameter("active")));
+                                }
+                                for (Message message : list) {
+                                    session.setAttribute("messageName", message.getSentUser().getName());
+                                    session.setAttribute("messageText", message.getText());
+                                    session.setAttribute("messageDate", message.getMessageDate());
+                            %>
+                            <div class="message">
+                                <div class="message_item-start">
+                                    <div class="message_item">
+                                        <div class="message__img">
+                                            <img class="chat__pic" src="${pageContext.request.contextPath}/img/Ozi.png" width="60" height="60" alt="user photo">
+                                        </div>
+                                    </div>
+                                    <div class="message_item">
+                                        <div class="chat__center">
+                                            <div class="chat__name companion">
+                                                ${messageName}
+                                            </div>
+                                            <div class="chat__last comp_message">
+                                                ${messageText}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <% } %>
+                                <div class="message_item">
+                                    <div class="chat__time">
+                                        <div class="chat__last">${messageDate}</div>
+                                    </div>
+                                </div>
                             </div>
+
+                            <% } %>
                         </div>
-                        <div class="type__part">
-                            <div class="components">
-                                <form method="post" action="/ozi/messages">
+                    </div>
+                    <div class="type__part">
+                        <div class="components">
+                            <form method="post" action="/ozi/messages">
 
                                         <textarea class="message_in" id="message_in"
                                                   name="message_in" placeholder="Write your message..."></textarea>
-                                    <button class="benefits__card-more">send</button>
-                                </form>
-                            </div>
+                                <button class="benefits__card-more">send</button>
+                            </form>
                         </div>
                     </div>
                 </div>
+
             </div>
 
         </div>

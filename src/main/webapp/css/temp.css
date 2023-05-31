@@ -1964,7 +1964,7 @@ input[type="number"]:focus {
 .chat__windows{
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: stretch;
     justify-content: space-around;
 }
 .chats{
@@ -2007,6 +2007,9 @@ input[type="number"]:focus {
 
 .message__list{
     padding: 37px 13px;
+    max-width: 394px;
+
+    display: block;
     border-radius: 20px;
     font-family: 'Lato';
     background-color: white;

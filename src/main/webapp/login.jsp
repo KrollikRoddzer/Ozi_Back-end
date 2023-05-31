@@ -10,14 +10,14 @@
 <html>
     <head>
         <meta charset="UTF-8">
-  <title>Welcome to Ozi!</title>
-  <link rel="icon" type="image/svg+xml" href="${pageContext.request.contextPath}/img/svg/Ozi_icon.svg">
-  <link rel="icon" type="image/png" href="${pageContext.request.contextPath}/img/favicon/Ozi__iconPNG.png">
-  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+        <title>Welcome to Ozi!</title>
+        <link rel="icon" type="image/svg+xml" href="${pageContext.request.contextPath}/img/svg/Ozi_icon.svg">
+        <link rel="icon" type="image/png" href="${pageContext.request.contextPath}/img/favicon/Ozi__iconPNG.png">
+        <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/temp.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,400;0,700;1,400&family=Inter&family=Lato:ital,wght@0,300;0,400;1,300&family=Red+Hat+Text:wght@500&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,400;0,700;1,400&family=Inter&family=Lato:ital,wght@0,300;0,400;1,300&family=Red+Hat+Text:wght@500&display=swap" rel="stylesheet">
     
     </head>
     <body class="element">
@@ -27,7 +27,7 @@
         </div>
         <!-- header end -->
         <main class="main">
-            <section class="intro">
+            <section class="intro__home">
                 <!-- info start -->
                 <div class="wrapper__info-1">
                     
@@ -124,7 +124,7 @@
                                     </div>
                                         <div class="form__ex__buttons">
                                             <button class="form__ex__button btn__1"><span>sign in</span></button>
-                                            <a href="http://localhost:8080/ozi/register"
+                                            <a href="/ozi/register"
                                                class="form__ex__button btn__2" ><span>sign up</span></a>
                                         </div>
                                         
@@ -144,5 +144,5 @@
             <jsp:include page="./components/footer.jsp" />
         </footer>
     </body>
-    <script src="./js/main.js"></script>
+    <script src="${pageContext.request.contextPath}/js/main.js"></script>
 </html>

@@ -24,7 +24,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,400;0,700;1,400&family=Inter&family=Lato:ital,wght@0,300;0,400;1,300&family=Red+Hat+Text:wght@500&display=swap" rel="stylesheet">
 
         <!-- подключение общего CSS-файла -->
-        <link rel="stylesheet" href="./css/temp.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/temp.css">
     </head>
     <body class="element">
         <!-- header start -->
@@ -33,7 +33,7 @@
         </div>
         <!-- header end -->
         <main class="main">
-            <section class="intro">
+            <section class="intro__home">
                 <!-- info start -->
                 <nav>
                     <!-- подключение файла navbar.jsp -->
@@ -46,7 +46,7 @@
                     <div class="profile">
                         <div class="profile__item">
                             <div class="profile__pic">
-                                <img class="profile__photo" alt="profile picture" src="./img/Dva.jpg" width="350" height="350">
+                                <img class="profile__photo" alt="profile picture" src="${pageContext.request.contextPath}/img/Ozi.png" width="350" height="350">
                             </div>
                             <!-- interaction__parth start --> 
                 <div class="interaction__parth">
