@@ -1,5 +1,6 @@
 package by.fpmibsu.ozi.db;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Connection;
@@ -16,7 +17,7 @@ class ConnectionCreator
     {
         try
         {
-            //PROPERTIES.load(new FileReader("dbProps/db.properties"));
+            //PROPERTIES.load(new FileReader("./META-INF/dbProps/db.properties"));
             PROPERTIES.setProperty("db.url", "jdbc:mysql://127.0.0.1:3306/ozi");
             PROPERTIES.setProperty("password", "Stasyan04");
             PROPERTIES.setProperty("user", "root");
