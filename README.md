@@ -29,23 +29,47 @@
 6.	Страница сообщений (message page).
 7.	Страница поиска (search).
 8.	Страница Pomodoro Timer’а (Pomodoro timer).
+      
       Ознакомиться с макетами можно, перейдя по ссылке https://www.figma.com/file/vedqO3ETEmaVMvQUtWzpau/Ozi?node-id=0%3A1&t=MhEy3NsRbbTlJoih-0
 
 ## 3. Use case diagram
 
-usecase1
-usecase2
+![usecase1](https://github.com/KrollikRoddzer/Ozi_Back-end/blob/main/docImages/usecase1.jpg)
+
+![usercase2](https://github.com/KrollikRoddzer/Ozi_Back-end/blob/main/docImages/usecase2.jpg)
 
 ## 4. ER-модель базы данных
 
-dbmodel
+![dbmodel](https://github.com/KrollikRoddzer/Ozi_Back-end/blob/main/docImages/db.jpg)
 
 ## 5. Диаграммы классов
 
+### Entity
+
+![entity](https://github.com/KrollikRoddzer/Ozi_Back-end/blob/main/docImages/entity.png)
+
+### DAO
+
+![dao](https://github.com/KrollikRoddzer/Ozi_Back-end/blob/main/docImages/dao.png)
+
+### Service
+
+![service](https://github.com/KrollikRoddzer/Ozi_Back-end/blob/main/docImages/service.jpg)
+
+### Servlet
+
+![servlet](https://github.com/KrollikRoddzer/Ozi_Back-end/blob/main/docImages/servlet.jpg)
+
 ## 6. Диаграмма пакетов
+
+![usercase2](https://github.com/KrollikRoddzer/Ozi_Back-end/blob/main/docImages/packages.png)
 
 ## 7. Диаграмма компонетов
 
+![components](https://github.com/KrollikRoddzer/Ozi_Back-end/blob/main/docImages/components.png)
+
 ## 8. Диаграмма развертывания
+
+![deployment](https://github.com/KrollikRoddzer/Ozi_Back-end/blob/main/docImages/deployment.jpg)
 
 
